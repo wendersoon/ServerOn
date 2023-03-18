@@ -13,5 +13,7 @@ Placa de rede: Gigabit<br>
 *OBS: No momento que começo esse projeto 18/03/2023, ainda utilizo essa versão do ubuntu como descrito acima. Mas no dia 20/03/2023 será lançado o Ubuntu 23.04 o qual irei utilizar assim que lançado*
 
 # Index
+Todas as etapas desse projeto estão listados abaixo:
 
+[Instalação do Sistema Operacional](https://github.com/dswendersonmelo/Server/blob/main/SistemaOperacional/UbuntuServer.md)
 
