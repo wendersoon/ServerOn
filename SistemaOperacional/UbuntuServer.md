@@ -24,4 +24,10 @@ No meu caso, baixei o arquivo na pasta Ubuntu que deixei no meu Desktop<br>
 ![image](https://user-images.githubusercontent.com/104470835/226129505-82aed1ee-c603-4935-b2ea-fb79f41ac248.png)
 10. Aqui você seleciona a versão que deseja, no meu caso será o Ubuntu Server minimized.
 ![image](https://user-images.githubusercontent.com/104470835/226129649-8f9630b8-e524-47dd-b84e-e29b5593c860.png)
+11. Aqui você pode definir a interface de rede que irá utilizar, deixei do mesmo modo que o sistema apresentou
+![image](https://user-images.githubusercontent.com/104470835/226129769-a85c6503-98d0-4443-9396-10f7e6362e96.png)
+12. As próximas etapas são: *Configure o proxy*, *Configure Ubuntu Arquive Mirror* e *Guided storage configuration* os quais você pode pular se essas configurações não o interessam por agora. No caso desse projeto, não precisamos nos atentar a elas
+13. Ao final será exibido um resumo de todas as configurações que selecionamos no caminho, confira se está tudo correto. Se estiver ok, é só selecionar concluído.
+![image](https://user-images.githubusercontent.com/104470835/226130009-13fb8236-1c5b-4a1e-a756-57ce90a9a93f.png)
+
 
