@@ -1,3 +1,9 @@
+
+<div align="center">
+
+![server-on](https://user-images.githubusercontent.com/104470835/226133741-49727b91-65b7-45d2-a37f-c633ee8c80b0.gif)
+
+</div>
 # Introdução
 
 Essa repositório documenta todas as etapas de implementação de um servidor proposto pelo professor [Paulo Henrique Sousa Barbosa](https://github.com/agenteph) na disciplina de Redes de Computadores II do curso de Ciência da Computação do Instituto Federal de Educação, Ciência e Tecnologia do Maranhão - Campus Imperatriz (IFMA). Neste projeto apresentarei as etapas que englobam desde a instalação do sistema operacional que vou utilizar no servidor até aos serviços propostos em sala de aula bem como serviços bônus desde que o tempo me permita. Vejamos as espeficações da minha máquina atual.
