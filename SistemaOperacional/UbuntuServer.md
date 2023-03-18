@@ -35,5 +35,13 @@ No meu caso, baixei o arquivo na pasta Ubuntu que deixei no meu Desktop<br>
 ![image](https://user-images.githubusercontent.com/104470835/226131143-5650ae61-3aef-431f-8bf8-f6a0c41ce5a7.png)
 16. Também vou pular a janela seguinte porque essas instalações não são necessárias para esse projeto.
 ![image](https://user-images.githubusercontent.com/104470835/226131245-2e26248b-8afe-4817-b6a1-1eb416597def.png)
-17. Aguarde a instalação 
+17. Aguarde a instalação. Se tudo deu certo, irá aparecer a opção *reboot now* nesse caso é só selecionar ela e aguardar o sistema operacional iniciar.
+![image](https://user-images.githubusercontent.com/104470835/226131380-d9a7a6fb-6940-4876-8a88-a5cf47055498.png)
+18. Quando carregar vai aparecer pedindo pra você entrar com o usuário e senha que você definiu na etapa 14 (não perca esse login e senha!!). Pronto, o servidor já está disponível pra uso.
+![image](https://user-images.githubusercontent.com/104470835/226132152-6c9de8e2-5c2c-4c39-937c-aafe7629497a.png)
+
+Agora na próxima etapa desse projeto, iremos fazer as instalações de pacotes iniciais para começarmos a trabalhar com os serviços e fazermos bom uso do servidor.
+
+Obrigado por ler!
+
 
