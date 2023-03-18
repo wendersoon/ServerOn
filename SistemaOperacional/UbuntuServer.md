@@ -7,10 +7,21 @@ será instalado no software de virtualização **Oracle VM VirtualBox versão Ve
 ![image](https://user-images.githubusercontent.com/104470835/226125737-7faff83b-d317-4cfd-8d30-5f8b9749005a.png)<br>
 No meu caso, baixei o arquivo na pasta Ubuntu que deixei no meu Desktop<br>
 2. Baixar o software de virtualização: você pode escolher qualquer um mas nesse tutorial usaremos o Oracle VM VirtualBox para exemplificação<br>
-3. Iniciar a instalação do sistema operacional na máquina virtual: você vai em *novo* e adiciona as informações do nome, a pasta que deseja instalar e a imagem ISO e em seguida clica em *Próximo*<br>
+3. Iniciar a configuração da máquina virtual: você vai em *novo* e adiciona as informações do nome, a pasta que deseja instalar e a imagem ISO e em seguida clica em *Próximo*<br>
 ![image](https://user-images.githubusercontent.com/104470835/226125983-5cf21a60-f345-4738-a69b-28cec4dc775d.png)
 ![image](https://user-images.githubusercontent.com/104470835/226125995-77c6bb2c-cda1-48b7-a416-64be50bcde31.png)<br>
 4. Na próxima tela pode deixar do jeito padrão mesmo e clicar em *próximo*
 ![image](https://user-images.githubusercontent.com/104470835/226126064-a81f049d-77d6-4e59-a17d-e569fa6e4a3e.png)
 5. Nessa etapa você define o quanto de RAM irá ficar disponível para sua máquina virtual. É uma recomendação que esse valor nunca passe da metade da quantidade de memória RAM que sua máquina real possui. No meu caso, como tenho 20GB de RAM colocarei 4GB para o servidor sendo muito mais do que necessário para o que é proposto nesse projeto, depois de feito isso é só clicar em *próximo*.
 ![image](https://user-images.githubusercontent.com/104470835/226126464-dac6f946-cb6e-4ed4-b255-cfa14d7cf0c6.png)
+6. Agora devemos escolher o tamanho do disco disponível para a máquina virtual. Aqui não precisamos de muito, então coloquei apenas 10GB de disco para o servidor, após isso é só clicar em próximo
+![image](https://user-images.githubusercontent.com/104470835/226126609-49842479-5087-4474-8111-4bd06100b1f7.png)
+7. Nesta parte será apresentado um resumo das configurações selecionadas no decorrer do processo, verifique se está tudo correto. Se estiver tudo ok, é só clica em finalizar e aguardar o processo de instalação do sistema operacional, lembre-se que até aqui foi apenas a configuração da máquina virtual
+![image](https://user-images.githubusercontent.com/104470835/226126774-e775cc17-5503-4539-8b1f-2fe40d90844a.png)
+8. Aguarde carregar o processo de inicialização. Irá aparecer uma janela semelhante a imagem abaixo, selecione o idioma que deseja usar e tecle *enter*. No meu caso, vou selecionar o português mesmo.
+![image](https://user-images.githubusercontent.com/104470835/226129171-34932cba-7622-4588-9702-c55e7d92a94a.png)
+9.  Nesta etapa você seleciona o layout do seu teclado, se estiver em dúvida pode usar a opção *identify keyboard* que irá lhe ajudar. Terminado é só ir em concluído e teclar *enter*.
+![image](https://user-images.githubusercontent.com/104470835/226129505-82aed1ee-c603-4935-b2ea-fb79f41ac248.png)
+10. Aqui você seleciona a versão que deseja, no meu caso será o Ubuntu Server minimized.
+![image](https://user-images.githubusercontent.com/104470835/226129649-8f9630b8-e524-47dd-b84e-e29b5593c860.png)
+
