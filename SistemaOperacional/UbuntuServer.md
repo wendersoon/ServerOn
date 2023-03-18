@@ -29,7 +29,11 @@ No meu caso, baixei o arquivo na pasta Ubuntu que deixei no meu Desktop<br>
 12. As próximas etapas são: *Configure o proxy*, *Configure Ubuntu Arquive Mirror* e *Guided storage configuration* os quais você pode pular se essas configurações não o interessam por agora. No caso desse projeto, não precisamos nos atentar a elas
 13. Ao final será exibido um resumo de todas as configurações que selecionamos no caminho, confira se está tudo correto. Se estiver ok, é só selecionar concluído. Irá aparecer um aviso, mas é só selecionar *continue* e processo de instalação vai iniciar
 ![image](https://user-images.githubusercontent.com/104470835/226130009-13fb8236-1c5b-4a1e-a756-57ce90a9a93f.png)
-14. Nessa etapa você irá criar o perfil de root do servidor. Após preencher as informações, selecione concluído.
+14. Nessa etapa você irá criar o perfil de root do servidor. Após preencher as informações, selecione concluído. Irá aparecer a opção de upgrade para o Ubuntu Pro, basta selecionar *skip for now* e seguir adiante.
 ![image](https://user-images.githubusercontent.com/104470835/226130763-c7a15a0f-e7e4-4fd8-9cc7-a7869db1e131.png)
- 
+15. Aqui se você quiser pode instalar o SSH. Porém optei por não instalar agora porque farei isso nas etapas seguintes de modo mais detalhado.<br>
+![image](https://user-images.githubusercontent.com/104470835/226131143-5650ae61-3aef-431f-8bf8-f6a0c41ce5a7.png)
+16. Também vou pular a janela seguinte porque essas instalações não são necessárias para esse projeto.
+![image](https://user-images.githubusercontent.com/104470835/226131245-2e26248b-8afe-4817-b6a1-1eb416597def.png)
+17. Aguarde a instalação 
 
