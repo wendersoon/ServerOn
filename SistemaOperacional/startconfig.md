@@ -1,4 +1,9 @@
-Nesta parte do projeto irei instalar ferramentas, utilitários e configurações necessárias muito úteis para usarmos no nosso servidor. E a medida que avanço na implementação dos serviços, irei atualizar essa página com novas informações, sempre mencionando em que parte do projeto fiz a instalação/configuração e se caso não aparecer essa menção é porque serve para todo momento.
+<div align="center">
+
+![giphy](https://user-images.githubusercontent.com/104470835/226196198-05907f48-d3ee-4e9c-8f67-58d6f8083a71.gif)
+</div>
+
+Nesta parte do projeto irei instalar ferramentas, utilitários e configurações necessárias e úteis para usarmos no nosso servidor. E a medida que avanço na implementação dos serviços, irei atualizar essa página com novas informações.
 
 *OBS: Todas as instalações e configurações serão feitas sempre em root, se você não sabe o que é veja esse [link](https://help.ubuntu.com/kubuntu/desktopguide/pt_BR/root-and-sudo.html)*
 
