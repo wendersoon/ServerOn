@@ -48,11 +48,11 @@ A instalação é muito simples, basta digitar o comando `sudo apt install opens
 
 Pronto, já podemos conectar remotamente ao servidor mas antes vou fazer uma pequena alteração na porta padrão que irá dar-se essa conexão. E para isso vamos abrir com o `nano` e editar o arquivo `sshd_config`, basta digitar esse comando `nano /etc/ssh/sshd_config`. No arquivo descomente a linha da porta, aqui você pode deixar a padrão 22 ou escolher uma de sua preferência que no meu caso é a porta 222. Depois disso salve o arquivo digitando `ctrl+o`ou `ctrl+x` e depois `y` seguido de enter.<br>
 
-![image](https://user-images.githubusercontent.com/104470835/226198874-87e8023f-9803-4223-b492-6fd7dc27bc22.png)
+![image](https://user-images.githubusercontent.com/104470835/226198874-87e8023f-9803-4223-b492-6fd7dc27bc22.png)<br>
 
 Depois de feito isso, reinicie o serviço com o seguinte comando `/etc/init.d/ssh restart`.<br>
-![image](https://user-images.githubusercontent.com/104470835/226199086-3a2f7d0b-f890-4d59-b455-80ba2691a664.png)
+![image](https://user-images.githubusercontent.com/104470835/226199086-3a2f7d0b-f890-4d59-b455-80ba2691a664.png)<br>
 E se tudo deu certo, já podemos conectar remotamente atráves da seguinte sintaxe: **ssh [USUARIO]@[IP-DO-SERVIDOR] -p [PORTA]**. Irei fazer isso no terminal do meu pc:<br>
-![image](https://user-images.githubusercontent.com/104470835/226199391-b4179303-5b7e-4a07-b762-070bedeee91f.png)
+![image](https://user-images.githubusercontent.com/104470835/226199391-b4179303-5b7e-4a07-b762-070bedeee91f.png)<br>
 Primeiro, veja como é bonito meu terminal em comparação ao do servidor (kkkk). Segundo, perceba que é preciso o login e a senha que você usa pra entrar no servidor e que depois de autenticado aquele nome no começo do comando muda. Veja que antes estava `wnot` e agora é o nome do servidor `rdtwo`, isso significa que deu tudo certo e a partir de agora usarei o meu terminal nativo que é mais legível
  
