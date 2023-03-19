@@ -54,5 +54,5 @@ Depois de feito isso, reinicie o serviço com o seguinte comando `/etc/init.d/ss
 ![image](https://user-images.githubusercontent.com/104470835/226199086-3a2f7d0b-f890-4d59-b455-80ba2691a664.png)<br>
 E se tudo deu certo, já podemos conectar remotamente atráves da seguinte sintaxe: **ssh [USUARIO]@[IP-DO-SERVIDOR] -p [PORTA]**. Irei fazer isso no terminal do meu pc:<br>
 ![image](https://user-images.githubusercontent.com/104470835/226199391-b4179303-5b7e-4a07-b762-070bedeee91f.png)<br>
-Primeiro, veja como é bonito meu terminal em comparação ao do servidor (kkkk). Segundo, perceba que é preciso o login e a senha que você usa pra entrar no servidor e que depois de autenticado aquele nome no começo do comando muda. Veja que antes estava `wnot` e agora é o nome do servidor `rdtwo`, isso significa que deu tudo certo e a partir de agora usarei o meu terminal nativo que é mais legível
+Primeiro, veja como é bonito meu terminal em comparação ao do servidor (kkkk). Segundo, perceba que é preciso o login e a senha que você usa pra entrar no servidor e que depois de autenticado aquele nome no começo do comando muda. Veja que antes estava `wnot` e agora é o nome do servidor `rdtwo`, isso significa que deu tudo certo. E a partir de agora usarei o meu terminal nativo que é mais legível nas próximas etapas.
  
