@@ -22,5 +22,5 @@ Placa de rede: Gigabit<br>
 # Index
 Todas as etapas desse projeto estão listados abaixo:
 
-1. [Instalação do Sistema Operacional](https://github.com/dswendersonmelo/Server/blob/main/SistemaOperacional/UbuntuServer.md)
-1.1. [Utilitários e Configurações Iniciais](https://github.com/dswendersonmelo/ServerOn/blob/main/SistemaOperacional/startconfig.md)
+* [Instalação do Sistema Operacional](https://github.com/dswendersonmelo/Server/blob/main/SistemaOperacional/UbuntuServer.md)<br>
+  * [Utilitários e Configurações Iniciais](https://github.com/dswendersonmelo/ServerOn/blob/main/SistemaOperacional/startconfig.md)
