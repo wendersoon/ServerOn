@@ -21,9 +21,17 @@ Vamos a nossa primeira ferramenta que é essencial para podermos conectar remota
 
 *O OpenSSH é um conjunto de ferramentas de software livre que permite a conexão segura de redes através do protocolo SSH. Ele inclui um cliente SSH para conexões remotas, um servidor SSH para permitir acesso remoto seguro ao sistema e ferramentas auxiliares para gerenciamento de chaves de criptografia e autenticação de usuários. É amplamente utilizado em sistemas Linux e Unix e é uma das principais soluções para conectar-se com segurança a servidores remotos.*
 
-Se quiser saber mais, pode acessar o site oficial neste [link](https://www.openssh.com/). 
+Se quiser saber mais, pode acessar o site oficial neste [link](https://www.openssh.com/).<br>
+A instalação é muito simples, basta digitar o comando `sudo apt install openssh-server` e aguardar instalar.
+![image](https://user-images.githubusercontent.com/104470835/226185414-b114d4a1-7846-4fd3-b9b6-becbcf63f61d.png)
 
+## Nano
 
+O nano é simplesmente um editor de texto de linha comando com uma interface bem intuitiva. Irei utilizar ele diversas vezes no decorrer desse projeto. O comando para instalar segue o mesmo padrão: `sudo apt install nano`.
 
+## Net-tools
+
+O próximo utilitário muito útil (pareceu um pleonasmo kkk) é o net-tools. Ele é um conjunto de ferramentas de rede para sistemas operacionais baseados em Linux e Unix, que permite aos usuários configurarem e diagnosticarem a rede. Contém uma série de comandos que o tornam uma ferramenta muito completa e certamente usaremos diversas vezes no decorrer desse trabalho. O comando para instalar segue o mesmo padrão `sudo apt install net-tools`.
+![image](https://user-images.githubusercontent.com/104470835/226186102-459004ce-9f94-4c6a-9ef5-175bc2533dc2.png)
 
 
