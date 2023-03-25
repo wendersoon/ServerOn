@@ -8,4 +8,40 @@ O apache é um software multiplataforma, isto é, ele roda em diversos sistemas 
 Neste parte do nosso projeto, iremos fazer a instalação do Apache e ver algumas de suas configurações básicas, lembrando que:
 
 ```
-Toda vez que for feita uma alteração, reinicie o serviço com o comando: ```
+Toda vez que for feita uma alteração, reinicie o serviço com o comando: 
+
+```
+Assim as alterações entrarão em vigor e se você tiver errado em alguma alteração, irá perceber mais rapidamente.<br>
+
+*Todos os comandos seguintes faça em modo root*<br>
+
+## Instalação
+
+Para instalar o Apache e sua documentação, vamos fazer isso com o seguinte comando:<br>
+`sudo apt-get install apache2 apache2-doc`
+Podemos o ver seu diretório no caminho `/etc/apache2/`<br>
+![image](https://user-images.githubusercontent.com/104470835/227718843-fc1deea9-4123-4a10-8343-830dac5df52a.png)
+
+Antes de prosserguimos é importante termos um resumo dos arquivos que estão no diretório `/etc/apache2/` que são arquivos de configuração do servidor, são eles:<br>
+
+- **apache2.conf**: é o arquivo principal de configuração do Apache e define as configurações globais para o servidor, como os diretórios raiz do servidor, os módulos a serem carregados, o usuário e o grupo que o Apache deve usar, entre outros.
+
+- **ports.conf**: este arquivo define as portas em que o Apache deve escutar por solicitações de clientes. As portas padrão são a 80 para HTTP e 443 para HTTPS.
+
+- **conf-available/** e **conf-enabled/**: são diretórios que contêm arquivos de configuração para módulos adicionais do Apache. Você pode habilitar e desabilitar módulos usando os comandos `a2enconf` e `a2disconf`, respectivamente.
+
+- **mods-available/** e **mods-enabled/**: são diretórios que contêm arquivos de configuração para módulos do Apache. Os arquivos aqui especificam as opções de configuração para cada módulo. Você pode habilitar e desabilitar módulos usando os comandos `a2enmod` e `a2dismod`, respectivamente.
+
+- **sites-available/** e **sites-enabled/**: são diretórios que contêm arquivos de configuração para cada site virtual que o Apache pode servir. Cada arquivo especifica o nome de domínio ou endereço IP, a porta, o diretório raiz do site, entre outras configurações. Você pode habilitar e desabilitar sites usando os comandos `a2ensite` e `a2dissite`, respectivamente.
+
+- **envvars**: é um arquivo que define variáveis de ambiente usadas pelo Apache, como o usuário e o grupo que o Apache deve usar.
+
+- **magic**: é um arquivo de configuração que permite o Apache determinar o tipo MIME de um arquivo com base em seu conteúdo. Isso é importante para garantir que os navegadores possam exibir corretamente o conteúdo do arquivo.
+
+Para verificarmos se a instalação deu certo podemos acessar o *localhost* do nosso servidor atráves do navegador. E para isso basta colocar o IP do servidor pois estamos o acessando remotamente. Veja o resultado:<br>
+![image](https://user-images.githubusercontent.com/104470835/227719259-1d5f65b5-8a6b-4e6e-ba7c-a06c6ba62e46.png)
+
+**It works!**
+
+
+
