@@ -5,12 +5,8 @@ O Apache é um servidor web de código aberto e gratuito, desenvolvido pela [Apa
 
 O apache é um software multiplataforma, isto é, ele roda em diversos sistemas operacionais e também suporta vários protocolos web como HTTP, HTTPS, FTP etc. Uma das principais vantagens do Apache está na sua arquitetura baseada em módulos, o que significa que é possível adicionar ou remover funcionalidades facilmente de acordo com as necessidades do usuário tornando-o assim um software de alta escalibilidade e modularidade. Se caso quiser saber mais informações pode visitar o site [oficial](https://www.apache.org/) ou esse [artigo](https://www.hostinger.com.br/tutoriais/o-que-e-apache) na hostinger.<br>
 
-Neste parte do nosso projeto, iremos fazer a instalação do Apache e ver algumas de suas configurações básicas, lembrando que:
+Neste parte do nosso projeto, iremos fazer a instalação do Apache e ver algumas de suas configurações básicas, lembrando que **toda vez que for feita uma alteração, reinicie ou recarregue o serviço com o comando**:<br> 
 
-```
-Toda vez que for feita uma alteração, reinicie o serviço com o comando: 
-
-```
 Assim as alterações entrarão em vigor e se você tiver errado em alguma alteração, irá perceber mais rapidamente.<br>
 
 *Todos os comandos seguintes faça em modo root*<br>
@@ -37,9 +33,12 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão no
 - **envvars**: é um arquivo que define variáveis de ambiente usadas pelo Apache, como o usuário e o grupo que o Apache deve usar.
 
 - **magic**: é um arquivo de configuração que permite o Apache determinar o tipo MIME de um arquivo com base em seu conteúdo. Isso é importante para garantir que os navegadores possam exibir corretamente o conteúdo do arquivo.
+Vamos verificar se o serviço está funcionando no sistema com o comando: sudo `systemctl status apache2`.<br>
+![image](https://user-images.githubusercontent.com/104470835/227719951-c1d34272-ddbb-439d-ae64-e6da275af669.png)
 
-Para verificarmos se a instalação deu certo podemos acessar o *localhost* do nosso servidor atráves do navegador. E para isso basta colocar o IP do servidor pois estamos o acessando remotamente. Veja o resultado:<br>
-![image](https://user-images.githubusercontent.com/104470835/227719259-1d5f65b5-8a6b-4e6e-ba7c-a06c6ba62e46.png)
+Também podemos verificar acessando o *localhost* do nosso servidor atráves do navegador. E para isso basta colocar o IP do servidor pois estamos o acessando remotamente. Veja o resultado:<br>
+![image](https://user-images.githubusercontent.com/104470835/227720026-23ecb624-311a-444b-b4f7-1f4459cf8f20.png)
+
 
 **It works!**
 
