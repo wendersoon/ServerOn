@@ -61,6 +61,14 @@ Vamos descomentar a linha que possui `#AddDefaultCharset UTF-8`e salvar com `ctr
 **Depois disso reinicie o serviço com o comando dado na introdução.**
 
 ## Alterando algo na página padrão
+O diretório `/var/www/` é o local padrão para armazenar arquivos HTML, CSS, JavaScript, imagens e outros arquivos relacionados ao conteúdo de um site no Apache. É lá que ficarão os sites que você deseja colocar no servidor. Por exemplo, imaginemos que você queira ter mais um site no servidor chamado de *abacate*, para isso basta criar um novo diretório dentro da raiz no modelo `/var/www/dominio`, isto é, `/var/www/abacate` e dentro dele colocar os arquivos html, css e etc.<br>
+Entendido esse ponto, basta que localizemos o arquivo html da página padrão do Apache. Ele está no caminho `/var/www/html/` como pode ser visto no gif abaixo, vamos abrir o arquivo `index.html` e modificar a frase **"It works!"** e depois salvar com `ctrl+o`.<br>
+
+![xeeoz-ps11m](https://user-images.githubusercontent.com/104470835/227785159-dcdfe1a8-1489-4b70-a1fb-43e6cff31f3e.gif)
+
+
+
+
 
 
 
