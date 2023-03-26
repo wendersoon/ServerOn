@@ -66,6 +66,10 @@ Entendido esse ponto, basta que localizemos o arquivo html da página padrão do
 
 ![xeeoz-ps11m](https://user-images.githubusercontent.com/104470835/227785159-dcdfe1a8-1489-4b70-a1fb-43e6cff31f3e.gif)
 
+Feita a modificação, recarreguemos o serviço com `sudo /etc/init.d/apache2 reload` e vejamos a alteração na página padrão.<br>
+![image](https://user-images.githubusercontent.com/104470835/227785375-344f6de6-2680-4314-a26b-e9eb061a1cc2.png)
+
+## Adicionando um site no servidor
 
 
 
