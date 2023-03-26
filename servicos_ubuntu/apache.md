@@ -84,6 +84,7 @@ Vamos habilitar nossa página para podermos ver a cara dele. Mas antes de fazerm
 ![1thvl-v94su](https://user-images.githubusercontent.com/104470835/227794092-622fca33-2f85-4b61-80f9-66a7ca7a9c1a.gif)
 
 - Agora vamos ativar o novo arquivo de configuração do nosso site com o comando `a2ensite NovoSite.conf` e recarregar o Apache. Depois disso basta acessarmos no navegador e vermos a "cara" do site.<br>
+![image](https://user-images.githubusercontent.com/104470835/227794570-fb99b911-6800-49ca-9c94-c0c9eff62929.png)
 
 
 
