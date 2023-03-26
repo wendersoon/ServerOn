@@ -76,6 +76,14 @@ Irei dá o nome ao novo diretório de `NovoSite` e lá dentro vou editar o códi
 
 ![1srit-omr9u](https://user-images.githubusercontent.com/104470835/227792356-ea7007e2-5b9d-4c0d-9e1a-87e8d3a7e2c4.gif)
 
+Vamos habilitar nossa página para podermos ver a cara dele. Mas antes de fazermos isso temos de seguir os seguintes passos:<br>
+- é preciso que desabilitemos o site atual (página padrão do Apache) com o comando `a2dissite <arquivo de configuração do site>`. Os arquivos de configuração dos sites que estão ativos você pode localizá-los no diretório `/etc/apache2/sites-enabled`, no caso em questão, o arquivo que queremos é o `000-default.conf` que depois de desabilitado é preciso **recarregar o Apache**.<br>
+![image](https://user-images.githubusercontent.com/104470835/227792906-794a2567-4a4b-481f-8df1-9af3f28c61fc.png)
+
+- O próximo passo é criarmos um arquivo de configuração para o site novo que criamos. E para isso temos que acessar o diretório `/etc/apache2/sites-available` e lá podemos usar o arquivo `000-default.conf` como modelo para a nossa copia que se chamará `NovoSite.conf` com o comando `cp 000-default.conf NovoSite.conf`. Dentro do arquivo de configuração, editamos o caminho que se encontra os arquivos do site. Veja no gif abaixo o procedimento:<br>
+![1thvl-v94su](https://user-images.githubusercontent.com/104470835/227794092-622fca33-2f85-4b61-80f9-66a7ca7a9c1a.gif)
+
+- Agora vamos ativar o novo arquivo de configuração do nosso site com o comando `a2ensite NovoSite.conf` e recarregar o Apache. Depois disso basta acessarmos no navegador e vermos a "cara" do site.<br>
 
 
 
