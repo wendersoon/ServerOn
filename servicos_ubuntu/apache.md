@@ -121,28 +121,16 @@ Se tudo deu certo, vamos ver uma página com informações do PHP como a da imag
 Se têm uma coisa que não pode faltar é um banco de dados, por isso vamos colocar um em nosso servidor e o escolhido é o MariaDB. Vamos instalar e configurar ele com os passos seguintes:
 
   - Instalar com o comando `sudo apt-get install mariadb-server`;
+  - Agora vamos configurar o MariaDB com o comando `sudo mysql_secure_installation`, siga os passos que irão aparecer;
   - Vamos verificar se ele está funcionando com o comando `sudo /etc/init.d/mariadb status` e pela imagem vemos que sim;
 ![image](https://user-images.githubusercontent.com/104470835/227799569-e0779500-a5a8-4d4f-a1a1-4c75b8ddbfd1.png)
-  - Agora vamos configurar o MariaDB com o comando `sudo mysql_secure_installation`, siga os passos que irão aparecer;
-  - Em seguida, vamos instalar um pacote `php-mysql` para habilitar a extensão Mysql com o PHP e com isso permitir a conexão com o MariaDB. O comando para instalar é `sudo apt-get install php-mysql`.
-  - Para ver se tudo deu certo, vamos criar um script, como o abaixo, em php para verificar a conexão. Siga os passos do tópico ***Adicionando um site no servidor*** para criar a página.
-```
-<?php
-$servername = "localhost";
-$username = "seu_nome_de_usuario";
-$password = "sua_senha";
-$dbname = "nome_da_sua_base_de_dados";
 
-// Criar conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+Pronto, temos um banco de dados que podemos utilizar em nossos desenvolvimentos.<br>
 
-// Checar conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
-echo "Conexão bem sucedida";
-?>
-```
+Termino por aqui essa parte do nosso projeto.
 
+![baby-yoda-thank-you](https://user-images.githubusercontent.com/104470835/227801743-a1641309-6584-40a6-b63a-e865ca8bcf5e.gif)
 
-
+  
+  
+  
