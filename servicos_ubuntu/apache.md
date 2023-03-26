@@ -71,7 +71,10 @@ Feita a modificação, recarreguemos o serviço com `sudo /etc/init.d/apache2 re
 
 ## Adicionando um site no servidor
 
+Agora vamos adicionar um novo site - não nos preocupemos com a questão de *domínio* por enquanto, vamos ver isso mais a frente quando montarmos o DNS - e para isso podemos dentro de `/var/www/` fazer uma cópia do diretório `html` para servir como modelo.<br>
+Irei dá o nome ao novo diretório de `NovoSite` e lá dentro vou editar o código html para o site que quero e depois salvar. Para copiar o comando é `cp -r html NovoSite`, depois de criado vou deletar o arquivo `index.html` de dentro de `NovoSite` e criar com o comando `nano newindex.html` o novo arquivo html do nosso site. Veja abaixo: <br>
 
+![1srit-omr9u](https://user-images.githubusercontent.com/104470835/227792356-ea7007e2-5b9d-4c0d-9e1a-87e8d3a7e2c4.gif)
 
 
 
