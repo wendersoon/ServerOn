@@ -86,6 +86,16 @@ Vamos habilitar nossa página para podermos ver a cara dele. Mas antes de fazerm
 - Agora vamos ativar o novo arquivo de configuração do nosso site com o comando `a2ensite NovoSite.conf` e recarregar o Apache. Depois disso basta acessarmos no navegador e vermos a "cara" do site.<br>
 ![image](https://user-images.githubusercontent.com/104470835/227794570-fb99b911-6800-49ca-9c94-c0c9eff62929.png)
 
+## Vendo os Logs do Apache
 
+O logs são extremamente necessários pois são esses arquivos que registram todas as ações realizadas no nosso sistema ou aplicativo e por isso mesmo permitem que problemas possam ser solucionados. Se você tiver uma problema na instalação ou em algum arquivo de configuração sempre vá no log que ele terá a resposta.<br>
+Para ver os arquivos de logs do apache você deve ir no caminho `/var/log/apache2`, dentro desse diretório temos três arquivos que são:
+ - access.log - logs de acessos;
+ - error.log - logs de erros;
+ - other_vhosts_access.log - usado para registrar solicitações que não correspondem a nenhum dos outros arquivos de log.
 
-
+Vejamos os logs de acessos com o comando `nano access.log`.<br>
+![image](https://user-images.githubusercontent.com/104470835/227796176-e8ab46a9-5d05-44b7-8a7f-20eea87ebcc9.png)
+Agora vejamos os logs de erros com o comando `nano error.log`.<br>
+![image](https://user-images.githubusercontent.com/104470835/227796231-cbbcc34a-c76e-4eab-861c-18b0abe9bc20.png)
+Se você quiser monitorar os acessos em tempo real atráves do log, pode usar o comando `sudo tail -f /var/log/apache2/access.log`.<br>
