@@ -61,6 +61,7 @@ Vamos descomentar a linha que possui `#AddDefaultCharset UTF-8`e salvar com `ctr
 **Depois disso reinicie o serviço com o comando dado na introdução.**
 
 ## Alterando algo na página padrão
+
 O diretório `/var/www/` é o local padrão para armazenar arquivos HTML, CSS, JavaScript, imagens e outros arquivos relacionados ao conteúdo de um site no Apache. É lá que ficarão os sites que você deseja colocar no servidor. Por exemplo, imaginemos que você queira ter mais um site no servidor chamado de *abacate*, para isso basta criar um novo diretório dentro da raiz no modelo `/var/www/dominio`, isto é, `/var/www/abacate` e dentro dele colocar os arquivos html, css e etc.<br>
 Entendido esse ponto, basta que localizemos o arquivo html da página padrão do Apache. Ele está no caminho `/var/www/html/` como pode ser visto no gif abaixo, vamos abrir o arquivo `index.html` e modificar a frase **"It works!"** e depois salvar com `ctrl+o`.<br>
 
@@ -101,3 +102,47 @@ Agora vejamos os logs de erros com o comando `nano error.log`.<br>
 Se você quiser monitorar os acessos em tempo real atráves do log, pode usar o comando `sudo tail -f /var/log/apache2/access.log`. Toda vez que eu atualizo a página, fica registrado no log.<br>
 ![gif](https://github.com/dswendersonmelo/ServerOn/raw/main/servicos_ubuntu/sy1be-jd84l.gif)<br>
 O mesmo você pode fazer para o log de erros, o comando segue o mesmo padrão `sudo tail -f /var/log/apache2/error.log`.<br>
+
+## Habilitar o PHP no servidor
+
+Agora vamos habilitar o PHP, uma das linguagens mais populares no desenvolvimento web, no nosso servidor. Se você não sabe do que se trata, veja esse [artigo](https://www.hostinger.com.br/tutoriais/o-que-e-php-guia-basico?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=1001560).<br>
+O primeiro passo é instalar o PHP e o módulo PHP para o Apache, fazemos isso com o seguinte comando `sudo apt-get install php libapache2-mod-php`. Depois de feito isso, **reiniciamos** o Apache para que essas configurações tenham efeito. Em seguida, vamos criar um novo site seguindo os passos do tópico ***Adicionando um site no servidor***, a diferença é que o arquivo html será em php com o seguinte código:<br>
+```
+<?php
+phpinfo();
+?>
+```
+Se tudo deu certo, vamos ver uma página com informações do PHP como a da imagem abaixo.<br>
+![image](https://user-images.githubusercontent.com/104470835/227798840-fca2059e-7f24-4f2e-88d7-06aec0573dd8.png)
+*Obs: o IP diferente ali em cima é porque tive de reiniciar a máquina virtual por causa de um problema por aqui*
+
+## Habilitar o banco de dados no servidor
+
+Se têm uma coisa que não pode faltar é um banco de dados, por isso vamos colocar um em nosso servidor e o escolhido é o MariaDB. Vamos instalar e configurar ele com os passos seguintes:
+
+  - Instalar com o comando `sudo apt-get install mariadb-server`;
+  - Vamos verificar se ele está funcionando com o comando `sudo /etc/init.d/mariadb status` e pela imagem vemos que sim;
+![image](https://user-images.githubusercontent.com/104470835/227799569-e0779500-a5a8-4d4f-a1a1-4c75b8ddbfd1.png)
+  - Agora vamos configurar o MariaDB com o comando `sudo mysql_secure_installation`, siga os passos que irão aparecer;
+  - Em seguida, vamos instalar um pacote `php-mysql` para habilitar a extensão Mysql com o PHP e com isso permitir a conexão com o MariaDB. O comando para instalar é `sudo apt-get install php-mysql`.
+  - Para ver se tudo deu certo, vamos criar um script, como o abaixo, em php para verificar a conexão. Siga os passos do tópico ***Adicionando um site no servidor*** para criar a página.
+```
+<?php
+$servername = "localhost";
+$username = "seu_nome_de_usuario";
+$password = "sua_senha";
+$dbname = "nome_da_sua_base_de_dados";
+
+// Criar conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Checar conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+echo "Conexão bem sucedida";
+?>
+```
+
+
+
