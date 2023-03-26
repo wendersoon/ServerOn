@@ -98,4 +98,6 @@ Vejamos os logs de acessos com o comando `nano access.log`.<br>
 ![image](https://user-images.githubusercontent.com/104470835/227796176-e8ab46a9-5d05-44b7-8a7f-20eea87ebcc9.png)
 Agora vejamos os logs de erros com o comando `nano error.log`.<br>
 ![image](https://user-images.githubusercontent.com/104470835/227796231-cbbcc34a-c76e-4eab-861c-18b0abe9bc20.png)
-Se você quiser monitorar os acessos em tempo real atráves do log, pode usar o comando `sudo tail -f /var/log/apache2/access.log`.<br>
+Se você quiser monitorar os acessos em tempo real atráves do log, pode usar o comando `sudo tail -f /var/log/apache2/access.log`. Toda vez que eu atualizo a página, fica registrado no log.<br>
+![gif](https://github.com/dswendersonmelo/ServerOn/raw/main/servicos_ubuntu/sy1be-jd84l.gif)<br>
+O mesmo você pode fazer para o log de erros, o comando segue o mesmo padrão `sudo tail -f /var/log/apache2/error.log`.<br>
