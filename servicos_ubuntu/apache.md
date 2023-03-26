@@ -47,9 +47,9 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão no
 Vamos verificar se o serviço está funcionando no sistema com o comando: sudo `systemctl status apache2`.<br>
 ![image](https://user-images.githubusercontent.com/104470835/227719951-c1d34272-ddbb-439d-ae64-e6da275af669.png)
 
-Também podemos verificar acessando o *localhost* do nosso servidor atráves do navegador. E para isso basta colocar o IP do servidor pois estamos o acessando remotamente. Veja o resultado:<br>
-![image](https://user-images.githubusercontent.com/104470835/227720026-23ecb624-311a-444b-b4f7-1f4459cf8f20.png)
-
+Também podemos verificar acessando o IP do nosso servidor no navegador. Veja o resultado:<br>
+![image](https://user-images.githubusercontent.com/104470835/227720026-23ecb624-311a-444b-b4f7-1f4459cf8f20.png)<br>
+Essa página indica que está funcionado e nela vemos algumas informações básicas sobre arquivos importantes do Apache.<br>
 
 **It works!**
 
@@ -59,6 +59,8 @@ No caminho `/etc/apache2/conf-enabled` há o arquivo **charset.conf** que é um 
 Vamos descomentar a linha que possui `#AddDefaultCharset UTF-8`e salvar com `ctrl+o`.<br>
 ![9d5ie-fdc8m](https://user-images.githubusercontent.com/104470835/227721738-6d38f99d-74fa-4d28-adb6-cbbeb7a10dc7.gif)
 **Depois disso reinicie o serviço com o comando dado na introdução.**
+
+## Alterando algo na página padrão
 
 
 
