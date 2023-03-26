@@ -129,8 +129,9 @@ Pronto, temos um banco de dados que podemos utilizar em nossos desenvolvimentos.
 
 Termino por aqui essa parte do nosso projeto.
 
+<div align="center">
 ![baby-yoda-thank-you](https://user-images.githubusercontent.com/104470835/227801743-a1641309-6584-40a6-b63a-e865ca8bcf5e.gif)
-
+</div>
   
   
   
