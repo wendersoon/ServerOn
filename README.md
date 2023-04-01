@@ -24,4 +24,4 @@ Todas as etapas desse projeto estão listados abaixo:
 
 * [Instalação do Sistema Operacional](https://github.com/dswendersonmelo/Server/blob/main/SistemaOperacional/UbuntuServer.md)<br>
   * [Utilitários e Configurações Iniciais](https://github.com/dswendersonmelo/ServerOn/blob/main/SistemaOperacional/startconfig.md)
-* [SERVIÇOS - Apache + PHP + MariaDB](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/apache.md)
+* [SERVIÇO: Apache + PHP + MariaDB](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/apache.md)
