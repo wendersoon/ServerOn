@@ -26,7 +26,7 @@ Fazendo isso todas as vezes que ocorre uma alteração, garantimos que erros pos
 
 Para instalar o Apache e sua documentação, vamos fazer isso com o seguinte comando:<br>
 `sudo apt-get install apache2 apache2-doc`.<br>
-Podemos o ver seu diretório no caminho `/etc/apache2/`<br>
+Podemos ver seu diretório no caminho `/etc/apache2/`<br>
 ![image](https://user-images.githubusercontent.com/104470835/227718843-fc1deea9-4123-4a10-8343-830dac5df52a.png)
 
 Antes de prosserguimos é importante termos um resumo dos arquivos que estão no diretório `/etc/apache2/` que são arquivos de configuração do servidor, são eles:<br>
