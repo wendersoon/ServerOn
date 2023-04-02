@@ -94,9 +94,23 @@ Para verificarmos as configurações utilizaremos os seguintes comandos `sudo na
 ![image](https://user-images.githubusercontent.com/104470835/229357839-e15759b6-bbdd-4dec-adc3-21753db64969.png)<br>
 Tudo certo por aqui :)
 
-4. Testar a configuração 
+4. Adicionar outro DNS
+
+Se caso nosso servidor não conseguir resolver consultas localmente ele pode buscar em outro DNS. Para configurar basta abrir o seguinte arquivo com o comando `sudo nano /etc/bind/named.conf.options` e descomentar as linhas de `forwarders` e adicionar o servidor que você quer, no meu caso será o DNS 1.1.1.1 da Cloudflare.<br>
+![image](https://user-images.githubusercontent.com/104470835/229358953-4864f568-e2b2-4a78-b01a-556b0eb248e1.png)<br>
+**Lembre-se de reiniciar o serviço!**<br>
+
+5. Testar a configuração 
 
 Para testarmos se o nosso servidor está resolvendo os nomes corretamente, vamos utilizar dois caminhos. O primeiro é com o utilitário `nslookup` e o segundo é atráves do navegador com a url `www.meusite753.com.br`. Mas antes de prosseguir, devemos configurar nossa máquina real para que responda ao DNS do nosso servidor, no meu caso o IP do meu servidor é **192.168.0.131** e vou configurar no arquivo `/etc/resolv.conf`. Veja esse [tutorial](https://tiflux.com/blog/como-mudar-o-dns-em-varias-plataformas-e-os/) de como alterar o DNS na sua maquina.
+
+* Com `nslookup`:<br>
+![image](https://user-images.githubusercontent.com/104470835/229359087-1b13ac93-2a7c-44f7-aefe-88f99bfe77b7.png)
+
+* No navegador (veja a url):<br>
+
+![image](https://user-images.githubusercontent.com/104470835/229359147-35021674-c17b-4fe0-b437-fd97659aac81.png)
+
 
 
 
