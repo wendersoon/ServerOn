@@ -11,7 +11,7 @@ E nesta etapa do projeto, iremos instalar e fazer algumas configurações básic
 
 *Todos os comandos serão executados em modo root.*<br>
 
-Para instalar usamos o seguinte comando `sudo apt install bind9 bind9-utils bind9-doc`. O `bind9` é o pacote principal do nosso servidor DNS, o `bind9-utils` é um pacote que fornece utilitérios adicionais que ajudam a gerenciar o DNS, como por exemplo, o `nslookup` que usaremos mais a frente e por fim `bind9-doc` é o pacote que contém a documentação oficial do BIND9.<br>
+Para instalar usamos o seguinte comando `sudo apt install bind9 bind9-dnsutils bind9-doc`. O `bind9` é o pacote principal do nosso servidor DNS, o `bind9-dnsutils` é um pacote que fornece utilitérios adicionais que ajudam a gerenciar o DNS, como por exemplo, o `nslookup` que usaremos mais a frente e por fim `bind9-doc` é o pacote que contém a documentação oficial do BIND9.<br>
 
 Podemos ver seu diretório no caminho `/etc/bind/`<br>
 ![image](https://user-images.githubusercontent.com/104470835/229319975-fbf96f9d-8d92-4447-b9b0-907f0be0533f.png)
@@ -80,9 +80,23 @@ www       IN      A       192.168.1.10
 admin     IN      A       192.168.1.20
 
 ```
-Não entrarei em detalhes do que cada termo significa, você pode estar vendo esse [artigo](https://docs.oracle.com/pt-br/iaas/Content/DNS/Reference/formattingzonefile.htm) muito bem detalhado da Oracle que aborda cada parte dessa documentação.<br>
+Não entrarei em detalhes do que cada termo significa, você pode estar lendo esse [artigo](https://docs.oracle.com/pt-br/iaas/Content/DNS/Reference/formattingzonefile.htm) muito bem detalhado da Oracle que aborda cada parte dessa documentação.<br>
 
 Veja como configurei o meu:<br>
+
+![image](https://user-images.githubusercontent.com/104470835/229357324-23d895b1-8687-4735-8bfa-18a31a3fa1a1.png)<br>
+
+Após configurar o arquivo de zona, reinicie o bind9 com o comando `sudo /etc/init.d/named restart`.<br>
+
+3. Vericar se há erros
+
+Para verificarmos as configurações utilizaremos os seguintes comandos `sudo named-checkconf` e `sudo named-checkzone meusite753.com.br /etc/bind/db.meusite753.com.br` (lembrando que você deve substituir "meusite753" pelo nome do seu site). Veja o resultado:<br>
+![image](https://user-images.githubusercontent.com/104470835/229357839-e15759b6-bbdd-4dec-adc3-21753db64969.png)<br>
+Tudo certo por aqui :)
+
+4. Testar a configuração 
+
+Para testarmos se o nosso servidor está resolvendo os nomes corretamente, vamos utilizar dois caminhos. O primeiro é com o utilitário `nslookup` e o segundo é atráves do navegador com a url `www.meusite753.com.br`. Mas antes de prosseguir, devemos configurar nossa máquina real para que responda ao DNS do nosso servidor, no meu caso o IP do meu servidor é **192.168.0.131** e vou configurar no arquivo `/etc/resolv.conf`. Veja esse [tutorial](https://tiflux.com/blog/como-mudar-o-dns-em-varias-plataformas-e-os/) de como alterar o DNS na sua maquina.
 
 
 
