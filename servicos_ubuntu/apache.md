@@ -44,6 +44,7 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão no
 - **envvars**: é um arquivo que define variáveis de ambiente usadas pelo Apache, como o usuário e o grupo que o Apache deve usar.
 
 - **magic**: é um arquivo de configuração que permite o Apache determinar o tipo MIME de um arquivo com base em seu conteúdo. Isso é importante para garantir que os navegadores possam exibir corretamente o conteúdo do arquivo.<br>
+
 Vamos verificar se o serviço está funcionando no sistema com o comando: sudo `systemctl status apache2`.<br>
 ![image](https://user-images.githubusercontent.com/104470835/227719951-c1d34272-ddbb-439d-ae64-e6da275af669.png)
 
