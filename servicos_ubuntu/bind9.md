@@ -18,20 +18,27 @@ Podemos ver seu diretório no caminho `/etc/bind/`<br>
 
 Antes de continuarmos é importante termos um resumo dos arquivos que estão nesse diretório que são arquivos de configuração do servidor, são eles:
 
-* named.conf: é o arquivo principal de configuração do BIND9. Este arquivo define as opções globais para o servidor DNS, bem como as zonas de DNS que o servidor está autorizado a responder.
+* `named.conf`: é o arquivo principal de configuração do BIND9. Este arquivo define as opções globais para o servidor DNS, bem como as zonas de DNS que o servidor está autorizado a responder.
 
-* named.conf.local: é um arquivo de configuração adicional que inclui zonas de DNS adicionais que não estão incluídas no arquivo named.conf principal.
+* `named.conf.local`: é um arquivo de configuração adicional que inclui zonas de DNS adicionais que não estão incluídas no arquivo named.conf principal.
 
-* named.conf.options: é outro arquivo de configuração adicional que define opções adicionais para o servidor DNS, como servidores DNS forwarders, regras de segurança, entre outras.
+* `named.conf.options`: é outro arquivo de configuração adicional que define opções adicionais para o servidor DNS, como servidores DNS forwarders, regras de segurança, entre outras.
 
-* db.<dominio>: são arquivos que contêm a configuração das zonas de DNS, incluindo registros DNS como A, CNAME, MX, entre outros (veremos mais a frente o que significam), que definem como os nomes de domínio são mapeados em endereços IP.
+* `named.conf.default-zones`: é um arquivo de exemplo incluído com o BIND9 que contém as zonas de DNS padrão que são comuns em muitas configurações de servidor DNS.
 
-* db.127: é um arquivo de zona especial que mapeia o endereço IP 127.0.0.1 para o nome de domínio "localhost". É usado para resolver consultas DNS para o servidor local.
+* `bind.keys`: é um arquivo incluído com o BIND9 que contém uma lista dos chaves DNSSEC confiáveis.
 
-* db.0: é um arquivo de zona especial que mapeia o endereço IP 0.0.0.0 para o nome de domínio "localhost". É usado para resolver consultas DNS para o servidor local.
+* `db.127`: é um arquivo de zona especial que mapeia o endereço IP 127.0.0.1 para o nome de domínio "localhost". É usado para resolver consultas DNS para o servidor local.
 
-* db.local: é um arquivo de zona especial que mapeia o nome de domínio "localhost" para o endereço IP 127.0.0.1. É usado para resolver consultas DNS para o servidor local.
+* `db.0`: é um arquivo de zona especial que mapeia o endereço IP 0.0.0.0 para o nome de domínio "localhost". É usado para resolver consultas DNS para o servidor local.
+
+* `db.255`: é um arquivo de exemplo incluído com o BIND9 que contém uma zona de DNS reverso para o endereço IP 255.0.0.0.
+
+* `db.local`: é um arquivo de zona especial que mapeia o nome de domínio "localhost" para o endereço IP 127.0.0.1. É usado para resolver consultas DNS para o servidor local.
   
-* db.empty: é um arquivo de zona especial que é usado para configurar uma zona vazia no servidor DNS.
+* `db.empty`: é um arquivo de zona especial que é usado para configurar uma zona vazia no servidor DNS.
 
-* named.conf.default-zones: é um arquivo de exemplo incluído com o BIND9 que contém as zonas de DNS padrão que são comuns em muitas configurações de servidor DNS.
+* `rndc.key`: é um arquivo que contém uma chave compartilhada entre o daemon do BIND9 e o utilitário rndc (Remote Name Daemon Control). O rndc é um utilitário usado para enviar comandos ao daemon do BIND9 de forma remota, permitindo que os administradores gerenciem o servidor DNS sem precisar se conectar diretamente à máquina em que o servidor está sendo executado.
+
+* `zones.rfc1918`: é um arquivo de configuração que define as zonas de endereços IP reservadas para uso interno, conforme definido na especificação RFC 1918.
+
