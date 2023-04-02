@@ -111,8 +111,21 @@ Para testarmos se o nosso servidor está resolvendo os nomes corretamente, vamos
 
 ![image](https://user-images.githubusercontent.com/104470835/229359147-35021674-c17b-4fe0-b437-fd97659aac81.png)
 
+## DNS reverso
 
+O DNS reverso é usado para encontrar o nome de domínio associado a um endereço IP. Ao contrário do DNS convencional, que mapeia um nome de domínio para um endereço IP, o DNS reverso mapeia um endereço IP para um nome de domínio. Para configurarmos, seguimos basicamente os mesmos passos anteriores com poucas mudanças.<br>
 
+* No arquivo `named.conf.local` vamos adicionar as informações da zona, seguindo o mesmo padrão. Porém aqui utilizaremos o IP reverso, por exemplo, se o endereço IP da rede for 192.168.1.0/24, o nome da zona reversa deve ser chamado de `1.168.192.in-addr.arpa`. No nosso caso, o IP é 192.168.0.101 e o nome da zona reversa ficará `0.168.192.in-addr.arpa`:<br>
+![image](https://user-images.githubusercontent.com/104470835/229360387-b8f04ade-5f21-4d5a-b213-4fb2e2aa22da.png)
 
+* Em seguida vamos criar o arquivo `0.168.192.in-addr.arpa.db` no diretório `/etc/bind/` e configurar o arquivo conforme apresentado no ponto 2 acima:<br>
 
+![image](https://user-images.githubusercontent.com/104470835/229360924-8508e81e-0d3d-4be2-a4cf-f5d8d057d78c.png)
+**Lembre-se de reiniciar o serviço!**<br>
 
+* Fazemos as checagens das configurações com os comandos `sudo named-checkconf` e `sudo named-checkzone meusite753.com.br /etc/bind/db.0.168.192.in-addr.arpa`.<br>
+![image](https://user-images.githubusercontent.com/104470835/229361067-56c7df2e-ce55-484c-858f-ed5c85c16434.png)
+
+* Agora é a hora de testarmos, veja o resultado com o `nslookup`:<br>
+  ![image](https://user-images.githubusercontent.com/104470835/229361209-202d7575-8b83-415a-a66a-9b1af577a810.png)<br>
+  Isso significa que está tudo configurado corretamente!
