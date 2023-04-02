@@ -128,4 +128,11 @@ O DNS reverso é usado para encontrar o nome de domínio associado a um endereç
 
 * Agora é a hora de testarmos, veja o resultado com o `nslookup`:<br>
   ![image](https://user-images.githubusercontent.com/104470835/229361209-202d7575-8b83-415a-a66a-9b1af577a810.png)<br>
-  Isso significa que está tudo configurado corretamente!
+  Isso significa que está tudo configurado corretamente!<br>
+  
+ Termino por aqui esta etapa.
+ <div align="center">
+
+![thank-you-thanks](https://user-images.githubusercontent.com/104470835/229361727-53e9e7a4-7062-4b24-90fd-03068c13099d.gif)
+</div>
+
