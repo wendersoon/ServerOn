@@ -42,3 +42,49 @@ Antes de continuarmos é importante termos um resumo dos arquivos que estão nes
 
 * `zones.rfc1918`: é um arquivo de configuração que define as zonas de endereços IP reservadas para uso interno, conforme definido na especificação RFC 1918.
 
+## Configuração
+
+1. Configurar as zonas
+
+O bind9 usa arquivos de zonas para associar nomes de domínios a endereços IP. Precisamos criar um arquivo de zona para cada domínio que desejamos configurar e para isso vamos abrir o arquivo de configuração com o seguinte comando `sudo nano /etc/bind/named.conf.local`. Em seguinda adicionar as seguintes linhas nesse arquivo:
+
+```
+zone "meusite.com.br" {
+    type master;
+    file "/etc/bind/db.meusite.com.br";
+};
+```
+Substituindo "meusite.com.br" pelo nome de domínio que você está configurando. Esse arquivo define uma zona mestre (master) para o domínio "meusite.com.br" e aponta para o arquivo de zona /etc/bind/db.meusite.com.br. Depois de tudo configurado salve com `ctrl+o`.<br>
+
+Veja como configurei o meu:<br>
+![image](https://user-images.githubusercontent.com/104470835/229353721-efc61765-c31a-4e45-b96e-8b20132af2d3.png)
+
+2. Criar os arquivos de zonas
+
+Agora para cada zona configurada no passo anterior, devemos criar um arquivo de zona com a extensão `.db` que é onde fica os registros DNS. Vamos fazer isso no diretório `/etc/bind/` com o comando `sudo nano /etc/bind/db.meusite753.com.br` (lembre-se que esse é o arquivo que está sendo apontado no passo anterior e por isso ele deve ter o nome do seu dominio). <br>
+Dentro do arquivo, você deve incluir os registros DNS para o domínio e seus subdomínios. Os registros DNS incluem informações como o endereço IP associado a um nome de domínio e o servidor de e-mail para o domínio(opcional, assim como o root). Veja abaixo um exemplo simples desse arquivo:<br>
+
+```
+$TTL    604800
+@       IN      SOA     ns1.meusite.com.br. admin.meusite.com.br. (
+                              2         ; serial
+                         604800         ; refresh 
+                          86400         ; retry 
+                        2419200         ; expire 
+                         604800         ; minimum TTL 
+;
+@       IN      NS      ns1.meusite.com.br.
+@       IN      NS      ns2.meusite.com.br.
+
+www       IN      A       192.168.1.10
+admin     IN      A       192.168.1.20
+
+```
+Não entrarei em detalhes do que cada termo significa, você pode estar vendo esse [artigo](https://docs.oracle.com/pt-br/iaas/Content/DNS/Reference/formattingzonefile.htm) muito bem detalhado da Oracle que aborda cada parte dessa documentação.<br>
+
+Veja como configurei o meu:<br>
+
+
+
+
+
