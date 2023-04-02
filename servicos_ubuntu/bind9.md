@@ -119,8 +119,8 @@ O DNS reverso é usado para encontrar o nome de domínio associado a um endereç
 ![image](https://user-images.githubusercontent.com/104470835/229360387-b8f04ade-5f21-4d5a-b213-4fb2e2aa22da.png)
 
 * Em seguida vamos criar o arquivo `0.168.192.in-addr.arpa.db` no diretório `/etc/bind/` e configurar o arquivo conforme apresentado no ponto 2 acima:<br>
+![image](https://user-images.githubusercontent.com/104470835/229361448-f5d1f51d-7ebc-4b19-996e-dbc908434c3d.png)
 
-![image](https://user-images.githubusercontent.com/104470835/229360924-8508e81e-0d3d-4be2-a4cf-f5d8d057d78c.png)
 **Lembre-se de reiniciar o serviço!**<br>
 
 * Fazemos as checagens das configurações com os comandos `sudo named-checkconf` e `sudo named-checkzone meusite753.com.br /etc/bind/db.0.168.192.in-addr.arpa`.<br>
