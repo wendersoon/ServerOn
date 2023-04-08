@@ -31,19 +31,19 @@ Podemos ver seu diretório no caminho `/etc/apache2/`<br>
 
 Antes de prosserguimos é importante termos um resumo dos arquivos que estão no diretório `/etc/apache2/` que são arquivos de configuração do servidor, são eles:<br>
 
-- **apache2.conf**: é o arquivo principal de configuração do Apache e define as configurações globais para o servidor, como os diretórios raiz do servidor, os módulos a serem carregados, o usuário e o grupo que o Apache deve usar, entre outros.
+- `apache2.conf`: é o arquivo principal de configuração do Apache e define as configurações globais para o servidor, como os diretórios raiz do servidor, os módulos a serem carregados, o usuário e o grupo que o Apache deve usar, entre outros.
 
-- **ports.conf**: este arquivo define as portas em que o Apache deve escutar por solicitações de clientes. As portas padrão são a 80 para HTTP e 443 para HTTPS.
+- `ports.conf`: este arquivo define as portas em que o Apache deve escutar por solicitações de clientes. As portas padrão são a 80 para HTTP e 443 para HTTPS.
 
-- **conf-available/** e **conf-enabled/**: são diretórios que contêm arquivos de configuração para módulos adicionais do Apache. Você pode habilitar e desabilitar módulos usando os comandos `a2enconf` e `a2disconf`, respectivamente.
+- `conf-available/` e `conf-enabled/`: são diretórios que contêm arquivos de configuração para módulos adicionais do Apache. Você pode habilitar e desabilitar módulos usando os comandos `a2enconf` e `a2disconf`, respectivamente.
 
-- **mods-available/** e **mods-enabled/**: são diretórios que contêm arquivos de configuração para módulos do Apache. Os arquivos aqui especificam as opções de configuração para cada módulo. Você pode habilitar e desabilitar módulos usando os comandos `a2enmod` e `a2dismod`, respectivamente.
+- `mods-available/` e `mods-enabled/`: são diretórios que contêm arquivos de configuração para módulos do Apache. Os arquivos aqui especificam as opções de configuração para cada módulo. Você pode habilitar e desabilitar módulos usando os comandos `a2enmod` e `a2dismod`, respectivamente.
 
-- **sites-available/** e **sites-enabled/**: são diretórios que contêm arquivos de configuração para cada site virtual que o Apache pode servir. Cada arquivo especifica o nome de domínio ou endereço IP, a porta, o diretório raiz do site, entre outras configurações. Você pode habilitar e desabilitar sites usando os comandos `a2ensite` e `a2dissite`, respectivamente.
+- `sites-available/` e `sites-enabled/`: são diretórios que contêm arquivos de configuração para cada site virtual que o Apache pode servir. Cada arquivo especifica o nome de domínio ou endereço IP, a porta, o diretório raiz do site, entre outras configurações. Você pode habilitar e desabilitar sites usando os comandos `a2ensite` e `a2dissite`, respectivamente.
 
-- **envvars**: é um arquivo que define variáveis de ambiente usadas pelo Apache, como o usuário e o grupo que o Apache deve usar.
+- `envvars`: é um arquivo que define variáveis de ambiente usadas pelo Apache, como o usuário e o grupo que o Apache deve usar.
 
-- **magic**: é um arquivo de configuração que permite o Apache determinar o tipo MIME de um arquivo com base em seu conteúdo. Isso é importante para garantir que os navegadores possam exibir corretamente o conteúdo do arquivo.<br>
+- `magic`: é um arquivo de configuração que permite o Apache determinar o tipo MIME de um arquivo com base em seu conteúdo. Isso é importante para garantir que os navegadores possam exibir corretamente o conteúdo do arquivo.<br>
 
 Vamos verificar se o serviço está funcionando no sistema com o comando: sudo `systemctl status apache2`.<br>
 ![image](https://user-images.githubusercontent.com/104470835/227719951-c1d34272-ddbb-439d-ae64-e6da275af669.png)
