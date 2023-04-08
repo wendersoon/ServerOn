@@ -164,6 +164,27 @@ Resultado:
 
 ![image](https://user-images.githubusercontent.com/104470835/230737320-51a3718a-7394-4d6d-8112-9fc55b9af00a.png)
 
+## Verificando os Logs
+
+Todos os logs do nosso servidor FTP são encotrados no diretório `/var/log/proftpd`.
+
+![image](https://user-images.githubusercontent.com/104470835/230737452-93fea887-09a0-4bd7-b00b-5f00fd6588d5.png)
+
+* `xferlog`: este arquivo contém informações detalhadas sobre todas as transferências de arquivos realizadas através do servidor FTP, incluindo o nome do arquivo transferido, a hora e a data da transferência, o endereço IP do cliente e o código de status da transferência. Veja o resultado no meu caso:
+
+![image](https://user-images.githubusercontent.com/104470835/230737659-f4160cac-9d07-4b78-a615-1400252c6d11.png)
+
+
+* `proftpd.log`: este arquivo contém informações gerais sobre o funcionamento do servidor FTP, como mensagens de depuração, avisos e erros. Veja novamente o meu:
+
+![image](https://user-images.githubusercontent.com/104470835/230737680-7f58171b-d989-433f-a5fd-c9e94e198c6a.png)
+
+É exatamente o que você está pensando, fiz várias tentativas para fazer o login por causa de um pequeno erro que, inclusive, só achei vendo esse arquivo. **Então sempre olhe os arquivos de logs quando surgir um problema**(kkk).
+
+* `controls.log`: é um arquivo de log específico que contém informações sobre a comunicação do servidor com outros sistemas de segurança, como firewalls, IDS/IPS e sistemas de autenticação externos. No meu servidor não foi registrado nada ainda nesse arquivo.
+
+# SAMBA
+
 
 
 
