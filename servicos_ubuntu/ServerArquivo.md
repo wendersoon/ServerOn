@@ -86,8 +86,61 @@ Abra o arquivo `proftpd.conf` com o comando `sudo nano /etc/proftpd/proftpd.conf
   DefaultRoot /home/user1 user1
   DefaultRoot /home/user2 user2
   ```
-Essa diretiva por padrão vem comentada, vamos descomentá-la e configurar com o usuário e o diretório que ele terá acesso (mais a frente criarei um usuário com esse mesmo nome e o mesmo diretório).
+Essa diretiva por padrão vem comentada, vamos descomentá-la e configurar com o usuário e o diretório raiz que ele terá acesso (mais a frente criarei um usuário com esse mesmo nome e o mesmo diretório):
 
-![image](https://user-images.githubusercontent.com/104470835/230729657-ab7bdeaa-f4d7-4abc-a698-fda34c22b14c.png)
+![image](https://user-images.githubusercontent.com/104470835/230734940-ea6c56ff-9407-4203-a1c4-649a93574043.png)
 
-5. 
+5. `Port` - essa diretiva define a porta TCP na qual o servidor FTP escuta as conexões do cliente. O valor padrão é a porta 21, que é o padrão para servidores FTP. Não alteraremos ela, pois queremos o servidor FTP no [modo ativo](https://www.pop-rs.rnp.br/~berthold/etcom/redes2-2000/trabalhos/FTP_EltonMarques.htm).
+
+![image](https://user-images.githubusercontent.com/104470835/230732012-89f6f674-54a8-4ff2-bd9a-236bb6c1dd4b.png)
+
+6. `MaxInstances` - define o número máximo de instâncias do servidor que podem ser executadas simultaneamente. Por padrão, o valor é 30. Limitaremos para apenas 5.
+
+![image](https://user-images.githubusercontent.com/104470835/230732039-5e1404f0-bd7e-4bc2-bdc5-dbe54ef04f1b.png)
+
+7. `AllowOverwrite` - esta diretiva habilita ou desabilita a capacidade dos clientes de sobregravarem arquivos existentes no servidor FTP. Por padrão ela vem ativa e deixarei assim.
+
+![image](https://user-images.githubusercontent.com/104470835/230732201-23b9c93c-ccd6-438a-b6a1-4886385bf67f.png)
+
+8. Adicionar a linha `RootLogin off` - essa diretiva especifica se o usuário root pode fazer login no servidor. No caso, quero desabilitada:
+
+![image](https://user-images.githubusercontent.com/104470835/230733590-2c9ffa23-4372-4827-98ea-ebc983dd1ee8.png)
+
+9. Adicionar a linha `TransferRate`- essa diretiva controla a velocidade de transferência de arquivos entre o cliente e o servidor, ela tem dois tipos de comandos: `RETR` que é para baixar um arquivo ou `STOR` para enviar um arquivo. Vamos adicinar a seguinte linha `TransferRate RETR 1024:1024` e `TransferRate STOR 1024:1024`. Estamos limitando as taxas de download e upload para apenas 1kilobyte por segundo:
+
+![image](https://user-images.githubusercontent.com/104470835/230734163-b4041c18-110a-4802-af54-2b908d3ef32b.png)
+
+Pois bem, depois de concluírmos todas essas etapas, vamos salvar o arquivo com `ctrl+o`. 
+
+### Adicionar Usuário
+
+Antes de testarmos nosso servidor, precisamos criar/adicionar o usuário que definimos no arquivo `proftpd.conf`. Vejamos os passos abaixo:
+
+1. Criar usuário `userftp` com o comando `sudo adduser userftp`:
+
+![image](https://user-images.githubusercontent.com/104470835/230734888-d7609dbe-f9fb-4b55-b1ca-e6d5e487b0d7.png)
+
+2. Vamos criar, por motivos de segurança, um diretório separado para esse usuario com o comando `mkdir /home/userftp/ftp`.
+
+3. Agora vamos editar as informações desse usuário no arquivo `/etc/passwd`, para abri-lo digite o comando `sudo nano /etc/passwd` e vá para a última linha. **Atenção! Muito cuidado em mexer neste arquivo, pois ele contém todas as informações de login no sistema**.
+
+- o usuário é pra estar assim:
+
+![image](https://user-images.githubusercontent.com/104470835/230735610-6971028e-07fb-454b-89e2-72a199fb3044.png)
+
+- Agora vou adicionar o diretório que criei na etapa anterior e também o seguinte caminho `/usr/sbin/nologin` que irá impedir que esse usuário faça login em alguma conta do sistema. Após isso salve o arquivo com `ctrl+o`. Resultado fica assim:
+
+![image](https://user-images.githubusercontent.com/104470835/230735719-0f2869a7-8229-4890-9c9b-d9a6dd01391e.png)
+
+4. Vamos alterar as permissões do diretório para esse usuário com o comando `chown userftp:userftp ftp`. Mas veja que antes as permissões eram `root:root`:
+
+![image](https://user-images.githubusercontent.com/104470835/230736130-04a57b1b-0469-4b06-a7d1-db64802a7b7d.png)
+
+E também dar permissão total para ler, escrever e executar para o usuário no diretório `/ftp`:
+
+![image](https://user-images.githubusercontent.com/104470835/230736240-eef00e9a-be43-45de-9070-ab9d04dfa612.png)
+
+## Teste do Servidor
+
+Pronto, terminamos todas as configurações para que tenhamos minimamente nosso servidor de arquivos FTP funcionando. Agora vamos reiniciar o serviço com o comando `sudo /etc/init.d/proftpd restart`.
+
