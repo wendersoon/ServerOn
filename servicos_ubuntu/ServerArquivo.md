@@ -128,9 +128,9 @@ Antes de testarmos nosso servidor, precisamos criar/adicionar o usuário que def
 
 ![image](https://user-images.githubusercontent.com/104470835/230735610-6971028e-07fb-454b-89e2-72a199fb3044.png)
 
-- Agora vou adicionar o diretório que criei na etapa anterior e também o seguinte caminho `/usr/sbin/nologin` que irá impedir que esse usuário faça login em alguma conta do sistema. Após isso salve o arquivo com `ctrl+o`. Resultado fica assim:
+- Agora vou adicionar o diretório que criei na etapa anterior. Após isso salve o arquivo com `ctrl+o`. Resultado fica assim:
 
-![image](https://user-images.githubusercontent.com/104470835/230735719-0f2869a7-8229-4890-9c9b-d9a6dd01391e.png)
+![image](https://user-images.githubusercontent.com/104470835/230737111-2eea89db-9626-4df2-891d-20b243df2419.png)
 
 4. Vamos alterar as permissões do diretório para esse usuário com o comando `chown userftp:userftp ftp`. Mas veja que antes as permissões eram `root:root`:
 
@@ -144,9 +144,26 @@ E também dar permissão total para ler, escrever e executar para o usuário no 
 
 Pronto, terminamos todas as configurações para que tenhamos minimamente nosso servidor de arquivos FTP funcionando. Agora vamos reiniciar o serviço com o comando `sudo /etc/init.d/proftpd restart`. Feito isso, é hora de testarmos se está funcionando tudo corretamente. 
 
-Há várias maneiras para realizar isso, no meu caso, o gerenciador de arquivos nativos do minha máquina real permite que eu acesse o servidor usando o endereço no seguinte padrão `ftp://IP-DO-SERVIDOR` (veja como você pode fazer aí na sua máquina). 
+Há várias maneiras para realizar isso, no meu caso, o gerenciador de arquivos nativo do minha máquina real permite que eu acesse o servidor usando o endereço no seguinte padrão `ftp://IP-DO-SERVIDOR` (veja como você pode fazer aí na sua máquina). 
 
 ![image](https://user-images.githubusercontent.com/104470835/230736491-bc86cb8d-dce6-4a2d-a560-936bbf4b720f.png)
 
-O servidor vai pedir as credenciais de acesso:
+O servidor vai pedir as credenciais de acesso, digite seu usuário e senha. E pronto, estamos dentro do servidor e temos o nosso "pendrive remoto" (kkk):
+
+![image](https://user-images.githubusercontent.com/104470835/230737165-f574be9f-da14-4458-a982-192f0b772b0c.png)
+
+Vamos verificar se o arquivo está realmente na pasta do usuário:
+
+![image](https://user-images.githubusercontent.com/104470835/230737184-41d9feb4-ce21-4bdb-8f06-2aca5582b848.png)
+
+Realizando mais um teste, vou criar um `.txt` no servidor e abrir na minha máquina real:
+
+![image](https://user-images.githubusercontent.com/104470835/230737299-dec45309-079d-4d21-844c-bb88b3b30313.png)
+
+Resultado: 
+
+![image](https://user-images.githubusercontent.com/104470835/230737320-51a3718a-7394-4d6d-8112-9fc55b9af00a.png)
+
+
+
 
