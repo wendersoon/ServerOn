@@ -142,5 +142,11 @@ E também dar permissão total para ler, escrever e executar para o usuário no 
 
 ## Teste do Servidor
 
-Pronto, terminamos todas as configurações para que tenhamos minimamente nosso servidor de arquivos FTP funcionando. Agora vamos reiniciar o serviço com o comando `sudo /etc/init.d/proftpd restart`.
+Pronto, terminamos todas as configurações para que tenhamos minimamente nosso servidor de arquivos FTP funcionando. Agora vamos reiniciar o serviço com o comando `sudo /etc/init.d/proftpd restart`. Feito isso, é hora de testarmos se está funcionando tudo corretamente. 
+
+Há várias maneiras para realizar isso, no meu caso, o gerenciador de arquivos nativos do minha máquina real permite que eu acesse o servidor usando o endereço no seguinte padrão `ftp://IP-DO-SERVIDOR` (veja como você pode fazer aí na sua máquina). 
+
+![image](https://user-images.githubusercontent.com/104470835/230736491-bc86cb8d-dce6-4a2d-a560-936bbf4b720f.png)
+
+O servidor vai pedir as credenciais de acesso:
 
