@@ -136,7 +136,7 @@ Antes de testarmos nosso servidor, precisamos criar/adicionar o usuário que def
 
 ![image](https://user-images.githubusercontent.com/104470835/230736130-04a57b1b-0469-4b06-a7d1-db64802a7b7d.png)
 
-E também dar permissão total para ler, escrever e executar para o usuário no diretório `/ftp`:
+E também dar permissão total para ler, escrever e executar para o usuário no diretório `/ftp` com o comando `chmod 777 ftp`:
 
 ![image](https://user-images.githubusercontent.com/104470835/230736240-eef00e9a-be43-45de-9070-ab9d04dfa612.png)
 
