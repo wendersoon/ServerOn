@@ -21,8 +21,10 @@ Placa de rede: Gigabit<br>
 # Index
 Todas as etapas desse projeto estão listados abaixo:
 
+### Ubuntu Server
+
 * [Instalação do Sistema Operacional - Ubuntu Server](https://github.com/dswendersonmelo/Server/blob/main/SistemaOperacional/UbuntuServer.md)<br>
   * [Utilitários e Configurações Iniciais](https://github.com/dswendersonmelo/ServerOn/blob/main/SistemaOperacional/startconfig.md)
-  * [SERVIÇO WEB: Apache + PHP + MariaDB](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/apache.md)
-  * [SERVIÇO DNS: Bind9](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/bind9.md)
-  * [SERVIÇO DE COMPARTILHAMENTO DE ARQUIVOS: Proftpd + SAMBA](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/ServerArquivo.md)
+* [SERVIÇO WEB: Apache + PHP + MariaDB](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/apache.md)
+* [SERVIÇO DNS: Bind9](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/bind9.md)
+* [SERVIÇO DE COMPARTILHAMENTO DE ARQUIVOS: Proftpd + SAMBA](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/ServerArquivo.md)
