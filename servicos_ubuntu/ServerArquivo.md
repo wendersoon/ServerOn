@@ -251,7 +251,7 @@ São muitos os parâmetros de configuração para uma secção, não listarei to
 
 1. Adicionar a secção para o usuário `usersamba` no final do arquivo como no exemplo abaixo:
 
-![image](https://user-images.githubusercontent.com/104470835/230790255-a4361014-fc8f-499f-a192-a26238c66461.png)
+![image](https://user-images.githubusercontent.com/104470835/230792179-0f7dcb45-f711-4312-a49e-176f140bed53.png)
 
 Veja como defini `create mask = 0770` e `directory mask = 0770`. Isso significa que quando um arquivo ou diretório for criado no compartilhamento, ele receberá permissões de leitura, gravação e execução para o **proprietário** e o **grupo proprietário**, mas nenhum acesso para outros usuários. Depois de feito isso, salve o arquivo com `ctrl+o`.
 
