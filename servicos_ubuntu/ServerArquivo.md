@@ -257,6 +257,10 @@ Veja como defini `create mask = 0770` e `directory mask = 0770`. Isso significa 
 
 2. Criar usuário `usersamba` e diretório `/usersamba/samba` - use os passos dados na secção ***Adicionar Usuário*** mais acima quando configuramos o servidor FTP, lembrando apenas de nomear o usuário como `usersamba` e o diretório correspondente.
 
+3. Agora vamos reiniciar o Samba com o seguinte comando `sudo /etc/init.d/smbd restart`. Podemos verificar que estar funcionando com o comando `sudo /etc/init.d/smbd status`.
 
+![image](https://user-images.githubusercontent.com/104470835/230790659-58796d7f-80a2-4501-9cb7-edab3b4cb8f4.png)
 
-3. 
+## Teste do Servidor
+
+Enfim, terminado a configuração podemos testar o funcionamento do servidor e para isso segue o mesmo que acontece quando testamos o servidor FTP mais acima. No meu caso, usarei o meu gerenciador de arquivos que oferece suporte ao protocolo SMB e o padrão de acesso é o mesmo `smb://IP-DO-SERVIDOR`.
