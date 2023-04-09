@@ -1,14 +1,14 @@
 # Introdução
 
-Nesta etapa do projeto iremos instalar e configurar nosso servidor de arquivos usando **FTP** e **Samba** que são os mais comuns no compartilhamento de arquivos.<br>
+Nesta etapa do projeto iremos instalar e configurar nosso servidor de arquivos usando **FTP** e **SMB** que são os protocolos de rede mais comuns no compartilhamento de arquivos.<br>
 
 O FTP (File Transfer Protocol) é um protocolo antigo que é usado para transferir arquivos pela internet. Ele funciona como um cliente-servidor, onde o cliente se conecta a um servidor FTP usando um nome de usuário e senha, e então pode enviar e receber arquivos para o servidor. O FTP é amplamente utilizado para transferência de arquivos grandes, como imagens, áudio e vídeo.
 
-O Samba, por outro lado, é um protocolo de compartilhamento de arquivos usado em LAN que permite que computadores com diferentes sistemas operacionais se comuniquem e compartilhem arquivos e impressoras em uma rede. O Samba usa o protocolo SMB (Server Message Block) para compartilhamento de arquivos.
+Já o SMB (Server Message Block) é um protocolo de compartilhamento de arquivos usado em LAN. Ele permite que vários usuários acessem e compartilhem arquivos e pastas em um servidor de arquivos. O SMB é usado principalmente em redes Windows, e pode ser usado para compartilhar impressoras e outros recursos em rede.
 
-Ambos os protocolos são importantes para compartilhar arquivos em redes, mas o FTP é mais utilizado para transferências pela internet e o Samba é mais utilizado em redes locais.
+Ambos os protocolos são importantes para compartilhar arquivos em redes, mas o FTP é mais utilizado para transferências pela internet e o SMB é mais utilizado em redes locais.
 
-Se quiser saber mais sobre o FTP veja esse artigo da [Hostinger](https://www.hostinger.com.br/tutoriais/ftp-o-que-e-como-funciona) e sobre o Samba acesse a [página oficial](https://www.samba.org/samba/) do projeto.
+Se quiser saber mais sobre o FTP veja esse artigo da [Hostinger](https://www.hostinger.com.br/tutoriais/ftp-o-que-e-como-funciona) e sobre o SMB acesse a [página oficial](https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview) aqui.
 
 ***Todos os comandos serão executados em modo root!***
 
@@ -188,6 +188,7 @@ Todos os logs do nosso servidor FTP são encotrados no diretório `/var/log/prof
 
 ![Logo_Samba_Software](https://user-images.githubusercontent.com/104470835/230779987-b39c773f-0809-43be-8b88-7cbf5f11a9e2.png)
 </div>
+
 
 
 
