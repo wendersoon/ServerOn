@@ -264,3 +264,12 @@ Veja como defini `create mask = 0770` e `directory mask = 0770`. Isso significa 
 ## Teste do Servidor
 
 Enfim, terminado a configuração podemos testar o funcionamento do servidor e para isso segue o mesmo que acontece quando testamos o servidor FTP mais acima. No meu caso, usarei o meu gerenciador de arquivos que oferece suporte ao protocolo SMB e o padrão de acesso é o mesmo `smb://IP-DO-SERVIDOR`.
+
+![image](https://user-images.githubusercontent.com/104470835/230790980-32d66288-460f-4c6d-bb3e-0bd652b2d417.png)
+
+Veja o que aparece para mim:
+
+![image](https://user-images.githubusercontent.com/104470835/230791001-a157f511-1262-41f5-89a5-fa94c34b9175.png)
+
+Perceba que ali também há uma pasta compartilhada para impressoras e se você voltar no gif que mostro o arquivo `smb.conf` verá que por padrão está pasta já está disponível para ser usada
+
