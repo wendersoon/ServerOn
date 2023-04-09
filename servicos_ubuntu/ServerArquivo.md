@@ -189,7 +189,74 @@ Todos os logs do nosso servidor FTP são encotrados no diretório `/var/log/prof
 ![Logo_Samba_Software](https://user-images.githubusercontent.com/104470835/230779987-b39c773f-0809-43be-8b88-7cbf5f11a9e2.png)
 </div>
 
+Para nosso servidor de arquivos usando o protocolo SMB, instalaremos o servidor SAMBA que é construído em cima dele e se você quiser saber mais sobre o projeto acesse a página oficial nesse [link](https://www.samba.org/). Mas antes, vejamos um resumo do que é o Samba.
+
+O Samba é um software livre e de código aberto que permite a comunicação multiplataforma entre sistemas Windows, Linux e Unix em uma rede. Ele implementa o protocolo SMB/CIFS (daí a origem do nome "SAMBA"), usado por sistemas operacionais Windows para compartilhar arquivos e recursos em uma rede. O Samba pode ser usado como servidor de arquivos, servidor de impressão ou controlador de domínio, e é amplamente utilizado em empresas e organizações em todo o mundo para permitir a comunicação e compartilhamento de arquivos em uma rede heterogênea de sistemas operacionais.
+
+## Instalação
+
+Para instalar você deve utilizar o seguinte comando `sudo apt-get install samba samba-common`. O `samba` é o pacote principal do SAMBA e o `samba-common` é um pacote que contém arquivos de configuração e outros recursos comuns compartilhados entre os diferentes componentes do Samba, ele é necessário para a instalação do software e deve ser instalado junto com o pacote principal.
+
+Concluída a instalação vejamos o diretório do serviço no caminho `/etc/samba`:
+
+![image](https://user-images.githubusercontent.com/104470835/230787192-c370d70e-903f-4a57-8759-1db0b3d3698a.png)
+
+Antes de continuarmos com a configuração é importante termos um resumo dos arquivos que estão nesse diretório, são eles:
+
+* `smb.conf`:  é o arquivo de configuração principal do Samba e define as opções gerais de configuração, bem como as seções de compartilhamento para os diretórios compartilhados. Ele é usado para definir as configurações de segurança, as permissões de compartilhamento, os nomes de usuário e senha permitidos etc.
+* `gdbcommands`: é um arquivo de script usado pelo depurador GDB para executar comandos específicos durante a depuração de programas que utilizam o Samba como biblioteca ou para depurar o próprio Samba.
+* `tls`: contém certificados e chaves TLS usados pelo servidor do Samba para criptografar a comunicação de rede entre o cliente e o servidor.  
+
+## Configuração
+
+Vamos nessa seção criar um usuário que possa utilizar o nosso servidor de arquivos Samba, mas antes precisamos entender como funcionar de maneira geral toda a estrutura do arquivo de configuração `smb.conf`. 
+
+O arquivo `smb.conf` é composto de várias partes ou secções como queira chamar. Cada uma dessas partes é identificada por uma chave colocada entre colchetes, vejamos no gif abaixo o arquivo na prática:
+
+![Screencast from 09-04-2023 14_48_14](https://user-images.githubusercontent.com/104470835/230788505-712a2f53-e7a0-4ab0-bfea-0e1c720bc408.gif)
+
+As principais secções desse arquivo são:
+
+* `[global]`: é onde são definidas as configurações globais do servidor Samba, como o nome do grupo de trabalho, o nome do servidor, o nível de log, a autenticação, o suporte a impressoras, a segurança, entre outros.
+
+* `[homes]`: esta secção define as configurações de compartilhamento de diretórios home dos usuários. Cada usuário tem acesso ao seu próprio diretório home.
+
+* `[printers]`: esta secção define as configurações de compartilhamento de impressoras.
+
+* `[nome_personalizado]`: e aqui são definidas as configurações de um compartilhamento específico, onde "nome_personalizado" é o nome do compartilhamento definido pelo administrador.
+
+Agora, dentro de cada secção há várias opções de configurações, vou listar as principais de maneira resumida:
+
+* `path`: o caminho para o diretório que está sendo compartilhado.
+
+* `valid users`: uma lista de usuários que têm permissão para acessar o compartilhamento.
+
+* `read only`: define se o compartilhamento é apenas para leitura ou para leitura e gravação.
+
+* `writeable`: define se o compartilhamento permite gravação.
+
+* `create mask`: as permissões padrão para novos arquivos criados no compartilhamento.
+
+* `directory mask`: as permissões padrão para novos diretórios criados no compartilhamento.
+
+* `guest ok`: define se o compartilhamento é aberto para acesso de convidados, ou seja, sem autenticação.
+
+* `security`:especifica o modo de autenticação usado pelo Samba.
+
+*  `encrypt passwords`: especifica se as senhas dos usuários serão criptografadas durante o processo de autenticação. 
+
+*   `smb passwd file`: é usada para especificar o caminho do arquivo que armazena as senhas dos usuários.
+
+São muitos os parâmetros de configuração para uma secção, não listarei todos por que foge do objetivo principal que queremos aqui nesse projeto. Talvez, eu faça uma parte 2 tratando detalhadamente as configurações do básico ao avançado. Mas com o que já temos, podemos fazer o servidor para o nosso usuário.
+
+1. Adicionar a secção para o usuário `usersamba` no final do arquivo como no exemplo abaixo:
+
+![image](https://user-images.githubusercontent.com/104470835/230790255-a4361014-fc8f-499f-a192-a26238c66461.png)
+
+Veja como defini `create mask = 0770` e `directory mask = 0770`. Isso significa que quando um arquivo ou diretório for criado no compartilhamento, ele receberá permissões de leitura, gravação e execução para o **proprietário** e o **grupo proprietário**, mas nenhum acesso para outros usuários. Depois de feito isso, salve o arquivo com `ctrl+o`.
+
+2. Criar usuário `usersamba` e diretório `/usersamba/samba` - use os passos dados na secção ***Adicionar Usuário*** mais acima quando configuramos o servidor FTP, lembrando apenas de nomear o usuário como `usersamba` e o diretório correspondente.
 
 
 
-
+3. 
