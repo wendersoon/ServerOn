@@ -184,6 +184,10 @@ Todos os logs do nosso servidor FTP são encotrados no diretório `/var/log/prof
 * `controls.log`: é um arquivo de log específico que contém informações sobre a comunicação do servidor com outros sistemas de segurança, como firewalls, IDS/IPS e sistemas de autenticação externos. No meu servidor não foi registrado nada ainda nesse arquivo.
 
 # SAMBA
+<div align="center">
+
+![Logo_Samba_Software](https://user-images.githubusercontent.com/104470835/230779987-b39c773f-0809-43be-8b88-7cbf5f11a9e2.png)
+</div>
 
 
 
