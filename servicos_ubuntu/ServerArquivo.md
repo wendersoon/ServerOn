@@ -257,7 +257,9 @@ Veja como defini `create mask = 0770` e `directory mask = 0770`. Isso significa 
 
 2. Criar usuário `usersamba` e diretório `/usersamba/samba` - use os passos dados na secção ***Adicionar Usuário*** mais acima quando configuramos o servidor FTP, lembrando apenas de nomear o usuário como `usersamba` e o diretório correspondente.
 
-3. Agora vamos reiniciar o Samba com o seguinte comando `sudo /etc/init.d/smbd restart`. Podemos verificar que estar funcionando com o comando `sudo /etc/init.d/smbd status`.
+3. Depois de ter adicionado o usuário no sistema é preciso adicionar o usuário no samba e para isso utilizamos o seguinte padrão de comando `smbpasswd -a [NOME-DE-USUARIO]` e se caso deseje excluir o usuário é o padrão `smbpasswd -x [NOME-DE-USUARIO]`. É interessante adicionar o mesmo nome de usuário e senha que você adicionou no sistema operacional. No meu caso, o comando utilizado foi `smbpasswd -a usersamba`:
+
+4. Agora vamos reiniciar o Samba com o seguinte comando `sudo /etc/init.d/smbd restart`. Podemos verificar que estar funcionando com o comando `sudo /etc/init.d/smbd status`.
 
 ![image](https://user-images.githubusercontent.com/104470835/230790659-58796d7f-80a2-4501-9cb7-edab3b4cb8f4.png)
 
