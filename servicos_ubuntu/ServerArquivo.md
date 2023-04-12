@@ -280,5 +280,12 @@ Veja o que aparece para mim:
 
 ![image](https://user-images.githubusercontent.com/104470835/230791001-a157f511-1262-41f5-89a5-fa94c34b9175.png)
 
-Perceba que ali também há uma pasta compartilhada para impressoras e se você voltar no gif que mostro o arquivo `smb.conf` verá que por padrão está pasta já está disponível para ser usada
+Perceba que ali também há uma pasta compartilhada para impressoras e se você voltar no gif que mostro o arquivo `smb.conf` verá que por padrão está pasta já está disponível para ser usada.
 
+Certo, agora clique na página do seu usuário e irá pedir o usuário e senha - coloque o que você configurou. Vou copiar um arquivo do meu computador real e verificar se ele está vísivel no diretório no servidor:
+
+![ezgif-3-77fe01494e](https://user-images.githubusercontent.com/104470835/231555392-1c9580e1-5c7f-471b-ab03-b2db93484a9f.gif)
+
+Está funcionando!
+
+## Verificando os Logs
