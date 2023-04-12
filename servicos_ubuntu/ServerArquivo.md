@@ -284,8 +284,10 @@ Perceba que ali também há uma pasta compartilhada para impressoras e se você 
 
 Certo, agora clique na página do seu usuário e irá pedir o usuário e senha - coloque o que você configurou. Vou copiar um arquivo do meu computador real e verificar se ele está vísivel no diretório no servidor:
 
-![ezgif-3-77fe01494e](https://user-images.githubusercontent.com/104470835/231555392-1c9580e1-5c7f-471b-ab03-b2db93484a9f.gif)
+![ezgif-3-14a90441a0](https://user-images.githubusercontent.com/104470835/231556017-1bb992d2-8f55-48c6-b976-72eb7b85e5b2.gif)
 
-Está funcionando!
+*Não se preocupe com o IP diferente ali na barra do gerenciador de arquivos, eu só estou em uma rede diferente kkk*
+
+**Está funcionando!**
 
 ## Verificando os Logs
