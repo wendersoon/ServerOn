@@ -255,11 +255,18 @@ São muitos os parâmetros de configuração para uma secção, não listarei to
 
 Veja como defini `create mask = 0770` e `directory mask = 0770`. Isso significa que quando um arquivo ou diretório for criado no compartilhamento, ele receberá permissões de leitura, gravação e execução para o **proprietário** e o **grupo proprietário**, mas nenhum acesso para outros usuários. Depois de feito isso, salve o arquivo com `ctrl+o`.
 
-2. Criar usuário `usersamba` e diretório `/usersamba/samba` - use os passos dados na secção ***Adicionar Usuário*** mais acima quando configuramos o servidor FTP, lembrando apenas de nomear o usuário como `usersamba` e o diretório correspondente.
+2. Após editar o arquivo de configuração `smb.conf`, podemos fazer uma checagem para ver se está tudo correto e para isso utilizamos o comando `testparm smb.conf`. Se caso houver problemas, o utilitário irá mostrar onde está o erro. Veja o teste no meu caso:
 
-3. Depois de ter adicionado o usuário no sistema é preciso adicionar o usuário no samba e para isso utilizamos o seguinte padrão de comando `smbpasswd -a [NOME-DE-USUARIO]` e se caso deseje excluir o usuário é o padrão `smbpasswd -x [NOME-DE-USUARIO]`. É interessante adicionar o mesmo nome de usuário e senha que você adicionou no sistema operacional. No meu caso, o comando utilizado foi `smbpasswd -a usersamba`:
+![ezgif-2-4cedfe085c](https://user-images.githubusercontent.com/104470835/231552683-d443eb21-e9b4-452c-9374-1855b45cf193.gif)
 
-4. Agora vamos reiniciar o Samba com o seguinte comando `sudo /etc/init.d/smbd restart`. Podemos verificar que estar funcionando com o comando `sudo /etc/init.d/smbd status`.
+
+3. Criar usuário `usersamba` e diretório `/usersamba/samba` - use os passos dados na secção ***Adicionar Usuário*** mais acima quando configuramos o servidor FTP, lembrando apenas de nomear o usuário como `usersamba` e o diretório correspondente.
+
+4. Depois de ter adicionado o usuário no sistema é preciso adicionar o usuário no samba e para isso utilizamos o seguinte padrão de comando `smbpasswd -a [NOME-DE-USUARIO]` e se caso deseje excluir o usuário é o padrão `smbpasswd -x [NOME-DE-USUARIO]`. É interessante adicionar o mesmo nome de usuário e senha que você adicionou no sistema operacional. No meu caso, o comando utilizado foi `smbpasswd -a usersamba`, veja:
+
+![ezgif-1-cc9a958255](https://user-images.githubusercontent.com/104470835/231550699-f260333c-b359-4b97-ab4a-c9311e740418.gif)
+
+5. Agora vamos reiniciar o Samba com o seguinte comando `sudo /etc/init.d/smbd restart`. Podemos verificar que estar funcionando com o comando `sudo /etc/init.d/smbd status`.
 
 ![image](https://user-images.githubusercontent.com/104470835/230790659-58796d7f-80a2-4501-9cb7-edab3b4cb8f4.png)
 
