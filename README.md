@@ -28,3 +28,4 @@ Todas as etapas desse projeto estão listados abaixo:
 * [SERVIÇO WEB: Apache + PHP + MariaDB](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/apache.md)
 * [SERVIÇO DNS: Bind9](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/bind9.md)
 * [SERVIÇO DE COMPARTILHAMENTO DE ARQUIVOS: Proftpd + SAMBA](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/ServerArquivo.md)
+* [SERVIÇO DHCP: ](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/dhcp.md)
