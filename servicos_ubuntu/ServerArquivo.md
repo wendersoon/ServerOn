@@ -290,4 +290,14 @@ Certo, agora clique na página do seu usuário e irá pedir o usuário e senha -
 
 **Está funcionando!**
 
-## Verificando os Logs
+Por fim, todos os logs do nosso servidor Samba estão no caminho `/var/log/samba/` e lá é armazenado a informação de cada conexão realizada com o servidor além, é claro, das informações de status do sistema. 
+
+Aqui acabamos essa parte do projeto. Até o próximo, obrigado!:)
+
+<div align="center">
+
+![picapau-amigão](https://user-images.githubusercontent.com/104470835/231615490-d7861d02-ae33-4678-844b-2789c08e14c1.gif)
+
+ </div>
+
+
