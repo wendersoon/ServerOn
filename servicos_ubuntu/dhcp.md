@@ -27,8 +27,32 @@ Para instalar você deve utilizar o seguinte comando `sudo apt-get install isc-d
 
 ![image](https://user-images.githubusercontent.com/104470835/232315843-2ac199e2-cdce-4252-9c58-abfe02ac8dbb.png)
 
-
 Antes de prosserguimos é importante termos um resumo dos arquivos que estão nesse diretório que são arquivos de configuração do servidor, são eles:
+
+* `ddns-keys`: este diretório é usado para armazenar chaves de atualização dinâmica DNS (DDNS) usadas pelo servidor DHCP.
+
+* `dhclient-enter-hooks.d`: este diretório é usado para armazenar scripts que são executados quando o cliente DHCP entra em um novo estado (quando é iniciado ou recebe um novo endereço IP).
+
+`dhclient-exit-hooks.d`: este diretório é usado para armazenar scripts que são executados quando o cliente DHCP sai de um estado (quando é desligado ou perde a conexão com a rede).
+
+* `dhclient.conf`: este arquivo contém as configurações do cliente DHCP, que é usado para solicitar um endereço IP de um servidor DHCP na rede.
+
+* `dhcpd6.conf`: este arquivo contém configurações para o servidor DHCPv6, que é usado para distribuir endereços IPv6 em uma rede.
+
+* `dhcpd.conf`: este arquivo é o arquivo de configuração principal do servidor DHCP ISC, que é usado para configurar o servidor DHCP, incluindo opções de rede, faixas de endereços IP e configurações de clientes DHCP.
+
+* `debug`: este arquivo contém as mensagens de depuração geradas pelo servidor DHCP.
+
+Nesta etapa do projeto irei trabalhar apenas com as configurações básicas do arquivo `dhcpd.conf`. Talvez, se o tempo permitir, irei fazer uma parte 2 com as configurações avançadas e num maior detalhe.
+
+## Configuração 
+
+
+
+
+
+
+
 
 
 
