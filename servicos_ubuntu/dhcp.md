@@ -66,8 +66,13 @@ Sabido o significado dessas diretivas veja como configurei o meu:
 
 Defini que o servidor DNS padrão será da Cloudflare `1.1.1.1` e `1.1.1.3`, e que um cliente poderá ter um IP associado a ele por 30 min e o máximo é 2 horas. E importante perceber que essa configurações dependem dos casos onde são aplicados. Imagina se você configurar a associação do IP por no máximo 45 min em uma rede pública de um parque onde existe um tráfego intenso de pessoas, com certeza teria problemas na conexão.
 
-3. 
+3. Se você parar um instante para ler o o arquivo `dhcpd.conf`, verá que nele estão comentados muitos exemplos de como configurar o servidor, têm-se desde de configurações personalizadas para uma máquina específica até as configurações para grandes redes. Mas como disse anteriormente, irei focar no mais básico para que tenhamos um servidor funcional nesse primeiro momento. 
 
+Agora quero meu servidor entregue IP's na faixa de `192.168.5.100` à `192.168.5.200`, que use os tempos padrões do servidor porém o servidor DNS primário será o `8.8.8.8` da Google. Então vou adicionar as seguintes diretivas no final do arquivo `dhcpd.conf`:
+
+![image](https://user-images.githubusercontent.com/104470835/232332340-c2efe05b-dda2-499a-887b-a939cc51cde6.png)
+
+A diretiva `option routers` é usada para especificar o endereço IP do gateway padrão e a `option broadcast-address` é usada para especificar o endereço de broadcast para a rede do cliente.
 
 
 
