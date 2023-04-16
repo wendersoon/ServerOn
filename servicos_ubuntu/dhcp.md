@@ -10,6 +10,25 @@ Quando um dispositivo é conectado a uma rede que usa o DHCP, ele solicita uma c
 
 Imagina se não houvesse o DHCP, essas configurações seriam todas manuais. Em um computador é tranquilo configurar, mas em redes que existem muitos dispositivos torna-se um trabalho cansativo e demorado. 
 
+<div align="center">
+
+![be9bc8030987bc5d0337f2df3ed30b53bc743173cf4d0606ea3282be32a07b5b_1](https://user-images.githubusercontent.com/104470835/232315731-7fb60fd2-7541-4001-a604-c001f7b715a7.jpg)
+
+</div>
+
 E nesta etapa do projeto, iremos instalar e configurar nosso próprio servidor DHCP e para isso instalaremos o **ISC DHCP Server**. Ele é um software open-source que implementa o protocolo DHCP e é muito utilizado em sistemas baseados em Unix, têm a característica de ser altamente configurável e personalizável. Se você quiser saber, pode estar acessando a [página oficial](https://www.isc.org/dhcp/).
+
+
+***Todos os comandos serão em modo root***
+
+## Instalação
+
+Para instalar você deve utilizar o seguinte comando `sudo apt-get install isc-dhcp-server`. Concluída a instalação vejamos o diretório do serviço no caminho `/etc/dhcp/`.
+
+![image](https://user-images.githubusercontent.com/104470835/232315843-2ac199e2-cdce-4252-9c58-abfe02ac8dbb.png)
+
+
+Antes de prosserguimos é importante termos um resumo dos arquivos que estão nesse diretório que são arquivos de configuração do servidor, são eles:
+
 
 
