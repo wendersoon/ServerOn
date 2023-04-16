@@ -98,10 +98,10 @@ Por fim, também podemos ver os logs do serviço DHCP com o seguinte comando `su
 
 Aqui acabamos essa parte do projeto. Até o próximo, obrigado!:)
 
+<div align = "center">
+  
+![53eec8f089f53417be1a2df3f831adf6](https://user-images.githubusercontent.com/104470835/232335433-9c3561cf-61f3-4542-9118-1b2849e7ba3e.gif)
 
-![thank-you-thanks (1)](https://user-images.githubusercontent.com/104470835/232335217-379798d8-3d84-4018-8e95-9222a4b4b148.gif)
-
-
-
+  </div>
 
 
