@@ -31,3 +31,5 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão ne
 
 Como já dito anteriormente em instalações de outros serviços, aqui irei trabalhar apenas com as configurações básicas do servidor, que se encontram no arquivo `squid.conf`, para que tenhamos um serviço minimamente funcional.
 
+## Configuração
+
