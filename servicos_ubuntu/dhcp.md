@@ -51,7 +51,23 @@ Nesta etapa do projeto irei trabalhar apenas com as configurações básicas do 
 
 ![image](https://user-images.githubusercontent.com/104470835/232319073-1ff0a794-6c57-4d7d-8306-b6908b0d132a.png)
 
-Feito essas alterações salve o arquivo (imagino que ja saiba o comando, mas em todo caso é `ctrl + o`) e reinicie o serviço com o comando `sudo /etc/init.d/isc-dhcp-server restart`
+Feito essas alterações salve o arquivo (imagino que ja saiba o comando, mas em todo caso é `ctrl + o`) e reinicie o serviço com o comando `sudo /etc/init.d/isc-dhcp-server restart`.
+
+2. Agora vamos abrir o arquivo de configuração principal do serviço dhcp com o comando `sudo nano /etc/dhcp/dhcpd.conf` e editar as configurações globais do servidor, iremos alterar as seguintes:
+
+* `default-lease-time`: é o tempo padrão, em segundos, que um endereço IP permanecerá associado a um determinado cliente DHCP, a menos que o cliente renove sua concessão antes que o tempo expire;
+* `max-lease-time`: especifica o tempo máximo, em segundos, de concessão para os endereços IP atribuídos pelo servidor DHCP. Isto é, o tempo máximo que o cliente DHCP poderá ficar com aquele IP antes que precise renovar a concessão;
+* `option domain-name`: especifica o nome do domínio usados pelo clientes DHCP; 
+* `option domain-name-servers`: especifica o endereço IP do servidor DNS que será atribuído aos clientes DHCP.
+
+Sabido o significado dessas diretivas veja como configurei o meu:
+
+![image](https://user-images.githubusercontent.com/104470835/232321208-d819c594-d12b-4e5c-bda7-fde4ff5fe534.png)
+
+Defini que o servidor DNS padrão será da Cloudflare `1.1.1.1` e que um cliente poderá ter um IP associado a ele por 30 min e que o máximo é 2 horas. E importante perceber que essa configurações dependem dos casos onde são aplicados. Imagina se você configurar a associação do IP por no máximo 45 min em uma rede pública de um parque onde existe um tráfego intenso de pessoas, com certeza teria problemas na conexão.
+
+3. 
+
 
 
 
