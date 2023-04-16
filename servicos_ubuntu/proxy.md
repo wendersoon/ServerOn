@@ -17,5 +17,17 @@ E nesta etapa do projeto, iremos instalar e configurar nosso servidor proxy. Par
 
 ## Instalação
 
+Para instalar você deve utilizar o seguinte comando `sudo apt-get install squid`. Concluída a instalação vejamos o diretório do serviço no caminho /etc/squid/.
 
+![image](https://user-images.githubusercontent.com/104470835/232340079-405e78f3-d592-42eb-b439-83b88602039b.png)
+
+Antes de prosserguimos é importante termos um resumo dos arquivos que estão nesse diretório que são arquivos de configuração do servidor, são eles:
+
+* `squid.conf`: este arquivo contém todas as configurações principais do Squid, como portas de escuta, diretórios de log, políticas de cache, autenticação de usuários, filtros de conteúdo, entre outras.
+
+* `conf.d`: é um diretório usado por algumas distribuições do Linux, como o Ubuntu, para armazenar arquivos de configuração adicionais do Squid. 
+
+* `errorpage.css` é um arquivo css usado para personalizar a página de erro do Squid. A página de erro é exibida quando um usuário tenta acessar um site bloqueado ou quando ocorre um erro no servidor proxy. Nesse arquivo, podemos ter uma página personalizada com o logo da empresa etc.
+
+Como já dito anteriormente em instalações de outros serviços, aqui irei trabalhar apenas com as configurações básicas do servidor, que se encontram no arquivo `squid.conf`, para que tenhamos um serviço minimamente funcional.
 
