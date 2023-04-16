@@ -68,9 +68,9 @@ Defini que o servidor DNS padrão será da Cloudflare `1.1.1.1` e `1.1.1.3`, e q
 
 3. Se você parar um instante para ler o o arquivo `dhcpd.conf`, verá que nele estão comentados muitos exemplos de como configurar o servidor, têm-se desde de configurações personalizadas para uma máquina específica até as configurações para grandes redes. Mas como disse anteriormente, irei focar no mais básico para que tenhamos um servidor funcional nesse primeiro momento. 
 
-Agora quero meu servidor entregue IP's na faixa de `192.168.5.100` à `192.168.5.200`, que use os tempos padrões do servidor porém o servidor DNS primário será o `8.8.8.8` da Google. Então vou adicionar as seguintes diretivas no final do arquivo `dhcpd.conf`:
+Agora quero meu servidor entregue IP's na faixa de `192.168.0.100` à `192.168.0.200`, que use os tempos padrões do servidor porém o servidor DNS primário será o `8.8.8.8` da Google. Então vou adicionar as seguintes diretivas no final do arquivo `dhcpd.conf`:
 
-![image](https://user-images.githubusercontent.com/104470835/232332340-c2efe05b-dda2-499a-887b-a939cc51cde6.png)
+![image](https://user-images.githubusercontent.com/104470835/232333539-b421577b-3cdf-4f42-a790-0d431dc49cb8.png)
 
 A diretiva `option routers` é usada para especificar o endereço IP do gateway padrão e a `option broadcast-address` é usada para especificar o endereço de broadcast para a rede do cliente. Depois de feito isso, salve o arquivo.
 
@@ -78,7 +78,18 @@ A diretiva `option routers` é usada para especificar o endereço IP do gateway 
 
 ![image](https://user-images.githubusercontent.com/104470835/232332795-69f24922-2ef4-4f3b-94e4-0b13762f80e4.png)
 
-Agora reinicie o serviço com o comando `sudo /etc/init.d/isc-dhcp-server restart`.
+Agora reinicie o serviço com o comando `sudo /etc/init.d/isc-dhcp-server restart`. Se nenhuma mensagem de erro aparecer, então significa que as configurações estão válidas.
+
+## Teste do Servidor
+
+Vamos verificar o status do nosso servidor com o comando `sudo /etc/init.d/isc-dhcp-server status`:
+
+![image](https://user-images.githubusercontent.com/104470835/232333769-924ed341-2e9e-4e23-8eb8-caca71a9792a.png)
+
+Veja que ele já está entregando o IP na faixa que queremos e que inclusive já têm um cliente DHCP (veja a última linha):
+
+![image](https://user-images.githubusercontent.com/104470835/232334067-315ad305-7019-4615-90cb-14f44182c3ad.png)
+
 
 
 
