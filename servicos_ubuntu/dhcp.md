@@ -33,7 +33,7 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão ne
 
 * `dhclient-enter-hooks.d`: este diretório é usado para armazenar scripts que são executados quando o cliente DHCP entra em um novo estado (quando é iniciado ou recebe um novo endereço IP).
 
-`dhclient-exit-hooks.d`: este diretório é usado para armazenar scripts que são executados quando o cliente DHCP sai de um estado (quando é desligado ou perde a conexão com a rede).
+* `dhclient-exit-hooks.d`: este diretório é usado para armazenar scripts que são executados quando o cliente DHCP sai de um estado (quando é desligado ou perde a conexão com a rede).
 
 * `dhclient.conf`: este arquivo contém as configurações do cliente DHCP, que é usado para solicitar um endereço IP de um servidor DHCP na rede.
 
