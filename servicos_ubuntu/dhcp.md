@@ -88,8 +88,7 @@ Vamos verificar o status do nosso servidor com o comando `sudo /etc/init.d/isc-d
 
 Veja que ele já está entregando o IP na faixa que queremos e que inclusive já têm um cliente DHCP (veja a última linha):
 
-![image](https://user-images.githubusercontent.com/104470835/232334067-315ad305-7019-4615-90cb-14f44182c3ad.png)
-
+![image](https://user-images.githubusercontent.com/104470835/232334146-0a751acd-7114-4f98-b489-50d74abcb7d4.png)
 
 
 
