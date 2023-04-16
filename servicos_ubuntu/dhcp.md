@@ -47,9 +47,11 @@ Nesta etapa do projeto irei trabalhar apenas com as configurações básicas do 
 
 ## Configuração 
 
+1. Primeiro vamos editar o arquivo que está no caminho `sudo nano /etc/default/isc-dhcp-server`. Este arquivo é usado para definir as opções de configuração padrão do nosso servidor dhcp. Entenda ele como o arquivo que contém as variáveis de ambiente que são usadas pelo script de inicialização do serviço dhcp. Vamos fazer apenas duas alterações nele, isto é, primeiro descomentar a linha `DHCPDv4_CONF=/etc/dhcp/dhcpd.conf` e segundo adicionar a interface de rede em `INTERFACESv4=""` (lembre-se de aqui verificar sua interface com o comando `ifconfig`). Veja como ficou o meu:
 
+![image](https://user-images.githubusercontent.com/104470835/232319073-1ff0a794-6c57-4d7d-8306-b6908b0d132a.png)
 
-
+Feito essas alterações salve o arquivo (imagino que ja saiba o comando, mas em todo caso é `ctrl + o`) e reinicie o serviço com o comando `sudo /etc/init.d/isc-dhcp-server restart`
 
 
 
