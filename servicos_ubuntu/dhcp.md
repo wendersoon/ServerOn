@@ -72,7 +72,14 @@ Agora quero meu servidor entregue IP's na faixa de `192.168.5.100` à `192.168.5
 
 ![image](https://user-images.githubusercontent.com/104470835/232332340-c2efe05b-dda2-499a-887b-a939cc51cde6.png)
 
-A diretiva `option routers` é usada para especificar o endereço IP do gateway padrão e a `option broadcast-address` é usada para especificar o endereço de broadcast para a rede do cliente.
+A diretiva `option routers` é usada para especificar o endereço IP do gateway padrão e a `option broadcast-address` é usada para especificar o endereço de broadcast para a rede do cliente. Depois de feito isso, salve o arquivo.
+
+4. Depois de feito essas alterações, utilize o comando `sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf` para verificar quaisquer erros de sintaxes que possam haver no arquivo de configuração. Irá aparecer uma imagem semelhante a de baixo, de outro modo pode conter algum erro.
+
+![image](https://user-images.githubusercontent.com/104470835/232332795-69f24922-2ef4-4f3b-94e4-0b13762f80e4.png)
+
+Agora reinicie o serviço com o comando `sudo /etc/init.d/isc-dhcp-server restart`.
+
 
 
 
