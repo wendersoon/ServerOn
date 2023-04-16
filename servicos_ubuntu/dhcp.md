@@ -62,9 +62,9 @@ Feito essas alterações salve o arquivo (imagino que ja saiba o comando, mas em
 
 Sabido o significado dessas diretivas veja como configurei o meu:
 
-![image](https://user-images.githubusercontent.com/104470835/232321208-d819c594-d12b-4e5c-bda7-fde4ff5fe534.png)
+![image](https://user-images.githubusercontent.com/104470835/232330647-a782f007-7b19-400d-a78a-023f297fdd6f.png)
 
-Defini que o servidor DNS padrão será da Cloudflare `1.1.1.1` e que um cliente poderá ter um IP associado a ele por 30 min e que o máximo é 2 horas. E importante perceber que essa configurações dependem dos casos onde são aplicados. Imagina se você configurar a associação do IP por no máximo 45 min em uma rede pública de um parque onde existe um tráfego intenso de pessoas, com certeza teria problemas na conexão.
+Defini que o servidor DNS padrão será da Cloudflare `1.1.1.1` e `1.1.1.3`, e que um cliente poderá ter um IP associado a ele por 30 min e o máximo é 2 horas. E importante perceber que essa configurações dependem dos casos onde são aplicados. Imagina se você configurar a associação do IP por no máximo 45 min em uma rede pública de um parque onde existe um tráfego intenso de pessoas, com certeza teria problemas na conexão.
 
 3. 
 
