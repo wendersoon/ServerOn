@@ -90,7 +90,16 @@ Veja que ele já está entregando o IP na faixa que queremos e que inclusive já
 
 ![image](https://user-images.githubusercontent.com/104470835/232334146-0a751acd-7114-4f98-b489-50d74abcb7d4.png)
 
+Por fim, também podemos ver os logs do serviço DHCP com o seguinte comando `sudo journalctl -u isc-dhcp-server`. Na imagem abaixo está um pequeno trecho do log.
 
+![image](https://user-images.githubusercontent.com/104470835/232334648-0b049323-0584-441c-879f-e3b96eb195ae.png)
+
+**Está funcionando!**
+
+Aqui acabamos essa parte do projeto. Até o próximo, obrigado!:)
+
+
+![thank-you-thanks (1)](https://user-images.githubusercontent.com/104470835/232335217-379798d8-3d84-4018-8e95-9222a4b4b148.gif)
 
 
 
