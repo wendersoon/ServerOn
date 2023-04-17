@@ -59,7 +59,7 @@ Abra o arquivo `squid.conf` e adicione as sequintes diretivas ao final do arquiv
 
 
 ```
-http_port 3128 transparent
+http_port 3128
 error_directory /usr/share/squid/errors/Portuguese
 cache_mem 1024 MB
 cache_dir ufs /var/spool/squid 10000 16 256
@@ -82,7 +82,7 @@ http_access allow all
 
 Vamos ao significado de cada uma das diretivas pra você saber o que estamos configurando, são eles:
 
-* `http_port 3128 (intercept ou transparent)`: define a porta em que o Squid escutará as conexões HTTP;
+* `http_port 3128`: define a porta em que o Squid escutará as conexões HTTP;
 * `error_directory /usr/share/squid/errors/Portuguese`: : define o diretório onde estão as páginas de erro do Squid em português. Veja a imagem dele baixo:
 
 ![image](https://user-images.githubusercontent.com/104470835/232602617-303a6a7f-39b6-4a48-badb-1c445ac3db58.png)
@@ -102,7 +102,11 @@ Agora que você sabe os significados das diretivas, sinta-se a vontade pra acess
 
 Depois de feito isso e antes de reiniciar o serviço, devemos criar o diretório de cache definido em `cache_dir`. Para isso utilize o comando `sudo mkdir -p /var/spool/squid` e altere as permissões (você já pode está verificando com ls -l dentro do diretório se já está `proxy:proxy`) desse diretório para o proxy com o comando `chown proxy:proxy /var/spool/squid`. Em seguida crie dentro `/etc/squid/` o arquivo *sitesproibidos* com o comando `touch sitesproibidos` e se quiser já adicionar alguma palavra para testar depois fique a vontade, no meu caso adicionei a palavra "quadrado".
 
-E por fim, use o comando da verdade (kkk) para verificar se as configurações estão corretas, se não aprecer nenhum aviso é porquê está tudo ok! O comando é `squid -k check`. Se tudo certo, então reinicie com `sudo /etc/init.d/squid restart`, pode demorar um pouco.
+E por fim, use o comando da verdade (kkk) para verificar se as configurações estão corretas, se não aprecer nenhum aviso é porquê está tudo ok! O comando é `squid -k check`. 
+
+
+
+Se tudo certo, então reinicie com `sudo /etc/init.d/squid restart`, pode demorar um pouco.
 
 ## 
 
