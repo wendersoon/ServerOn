@@ -69,7 +69,7 @@ cache_swap_low 70
 cache_swap_high 95
 access_log daemon:/var/log/squid/access.log squid
 cache_log /var/log/squid/cache.log
-acl localnet src 192.168.1.0/24
+acl localnet src 192.168.0.0
 acl Safe_ports port 80 # http
 acl Safe_ports port 21 # ftp
 acl Safe_ports port 443 # https
@@ -102,13 +102,15 @@ Agora que você sabe os significados das diretivas, sinta-se a vontade pra acess
 
 Depois de feito isso e antes de reiniciar o serviço, devemos criar o diretório de cache definido em `cache_dir`. Para isso utilize o comando `sudo mkdir -p /var/spool/squid` e altere as permissões (você já pode está verificando com ls -l dentro do diretório se já está `proxy:proxy`) desse diretório para o proxy com o comando `chown proxy:proxy /var/spool/squid`. Em seguida crie dentro `/etc/squid/` o arquivo *sitesproibidos* com o comando `touch sitesproibidos` e se quiser já adicionar alguma palavra para testar depois fique a vontade, no meu caso adicionei a palavra "quadrado".
 
-E por fim, use o comando da verdade (kkk) para verificar se as configurações estão corretas, se não aprecer nenhum aviso é porquê está tudo ok! O comando é `squid -k check`. 
+Agora use o comando da verdade (kkk) para verificar se as configurações estão corretas, se não aprecer nenhum aviso é porquê está tudo ok! O comando é `squid -k check`. Depois utilize o seguinte comando `echo 1 > /proc/sys/net/ipv4/ip_forward`, ele é uma configuração do Linux que permite que pacotes sejam encaminhados de uma interface de rede para outra. Habilitando assim o encaminhamento de pacotes IPv4 na máquina, permitindo que o Squid atue como um proxy para os clientes, é necessário reiniciar a máquina para que a configuração entre em vigor.
 
+Logo após, utilize o comando `iptables -t nat -A POSTROUTING -o <interface de internet> -s <ip/mascara> -j MASQUERADE` e substitua por sua interface de rede, o IP e a máscara, por exemplo, no meu caso fica assim `iptables -t nat -A POSTROUTING -o enp0s3 -s <192.168.0.0/24> -j MASQUERADE`. Esse comando configura uma regra de NAT no iptables do Linux, isto é, permite que dispositivos em uma rede local (IP 192.168.0.0/24) possam acessar a Internet por meio de uma interface de rede específica (enp0s3), através do redirecionamento do tráfego de saída da rede local para essa interface de rede.
 
+Se tudo deu certo até aqui, então reinicie com `sudo /etc/init.d/squid restart` e aguarde um pouco. Vamos verificar o status do nosso servidor com `sudo /etc/init.d/squid status`.
 
-Se tudo certo, então reinicie com `sudo /etc/init.d/squid restart`, pode demorar um pouco.
+![image](https://user-images.githubusercontent.com/104470835/232618807-421ebdf8-b7e3-49c5-ba36-de0a1a6af433.png)
 
-## 
+## Teste do Servidor 
 
 
 
