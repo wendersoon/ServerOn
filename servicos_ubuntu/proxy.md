@@ -88,5 +88,22 @@ Vamos ao significado de cada uma das diretivas pra você saber o que estamos con
 ![image](https://user-images.githubusercontent.com/104470835/232602617-303a6a7f-39b6-4a48-badb-1c445ac3db58.png)
 
 * `cache_mem 1024 MB`: define a quantidade de memória RAM que será utilizada para armazenar objetos em cache, **essa configuração depende das especifícações de seu servidor**.
-* `cache_dir ufs /var/spool/squid 10000 16 256`: define o diretório onde serão armazenados os objetos em cache. Essa diretiva possui alguns parâmetros adicionais como: `ufs`(Unix File System) - é o tipo de sistema de arquivos que o Squid usa no armazenamento da cache; `10000`
+* `cache_dir ufs /var/spool/squid 10000 16 256`: define o diretório onde serão armazenados os objetos em cache.A sintaxe padrão dela é `cache_dir aufs Directory-Name Mbytes L1 L2 [options]` você pode está verificando na [documentação](http://www.squid-cache.org/Doc/config/cache_dir/). Os parâmetros definidos foram: `ufs`(Unix File System) - é o tipo de sistema de arquivos que o Squid usa no armazenamento da cache; `10000` informa o tamanho em MB do diretório de cache (**veja o que seu sistema suporta**); `16 256` - diz que criará 16 diretórios de nível 1 e que dentro de cada diretório teremos 256 outros diretórios;
+* `maximum_object_size_in_memory 64 KB`: define o tamanho máximo de um objeto que pode ser armazenado em cache na memória RAM;
+* `maximum_object_size 512 MB`: Define o tamanho máximo de um objeto que pode ser armazenado em cache no disco rígido;
+* `cache_swap_low 70` e `cache_swap_high 95`: já foram explicados mais acima;
+* `access_log daemon:/var/log/squid/access.log squid`: define o arquivo de log onde serão registradas as requisições e respostas HTTP;
+* `cache_log /var/log/squid/cache.log`: define o arquivo de log onde serão registradas as ações relacionadas ao cache de objetos.
+
+
+
+
+
+
+
+
+
+
+
+
 
