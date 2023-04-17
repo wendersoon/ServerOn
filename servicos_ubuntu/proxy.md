@@ -39,7 +39,7 @@ Depois de ter feito isso, abra o arquivo de configuração principal com o coman
 
 ![image](https://user-images.githubusercontent.com/104470835/232581249-92d56fc0-477b-486f-a55c-28b808d971b8.png)
 
-Conforme a imagem acima, são as recomendações de configurações mínimas que são necessárias para iniciar e usar o Squid como um servidor proxy. Preste atenção na diretiva `acl` que acompanha todas as linhas desmarcadas desse trecho. Essa diretiva (`acl` - Access Control List) é usada para definir uma **lista de controle de acesso** que pode ser usada para **permitir ou negar** o acesso a determinados recursos. Elas podem ser usadas em vários contextos, isto é, as `acl` podem ser definidas de várias maneiras no arquivo `squid.conf`, isto é, definidas por endereço IP, nome de domínio, expressões regulares, por lista de palavras-chave, por hora do dia, por tipo de arquivo etc., realmente a lista é longa. Por exemplo, a diretiva `acl Safe_ports port 21` está criando uma ACL chamada `Safe_ports` que permite ou nega o acesso à porta 21. 
+Conforme a imagem acima, são as recomendações de configurações mínimas que são necessárias para iniciar e usar o Squid como um servidor proxy. Preste atenção na diretiva `acl` que acompanha todas as linhas desmarcadas desse trecho. Essa diretiva (`acl` - Access Control List) é usada para definir uma **lista de controle de acesso** que pode ser usada para **permitir ou negar** o acesso a determinados recursos. As `acl` podem ser definidas de várias maneiras no arquivo `squid.conf`, isto é, definidas por endereço IP, nome de domínio, expressões regulares, por lista de palavras-chave, por hora do dia, por tipo de arquivo etc., realmente a lista é longa. Por exemplo, a diretiva `acl Safe_ports port 21` está criando uma ACL chamada `Safe_ports` que permite ou nega o acesso à porta 21. 
 
 ![image](https://user-images.githubusercontent.com/104470835/232587024-b5fc43c1-932a-4902-8d6a-e70c9a4bd752.png)
 
@@ -69,12 +69,12 @@ cache_swap_low 70
 cache_swap_high 95
 access_log daemon:/var/log/squid/access.log squid
 cache_log /var/log/squid/cache.log
-acl localnet src 192.168.1.0/24
+acl localnet src 192.168.0.0
 acl Safe_ports port 80 # http
 acl Safe_ports port 21 # ftp
 acl Safe_ports port 443 # https
 http_access deny !Safe_ports
-acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos"
+acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos.txt"
 http_access deny localnet sitesproibidos
 http_access allow localnet
 http_access allow all
@@ -93,9 +93,10 @@ Vamos ao significado de cada uma das diretivas pra você saber o que estamos con
 * `maximum_object_size 512 MB`: Define o tamanho máximo de um objeto que pode ser armazenado em cache no disco rígido;
 * `cache_swap_low 70` e `cache_swap_high 95`: já foram explicados mais acima;
 * `access_log daemon:/var/log/squid/access.log squid`: define o arquivo de log onde serão registradas as requisições e respostas HTTP;
-* `cache_log /var/log/squid/cache.log`: define o arquivo de log onde serão registradas as ações relacionadas ao cache de objetos.
+* `cache_log /var/log/squid/cache.log`: define o arquivo de log onde serão registradas as ações relacionadas ao cache de objetos;
+* Em seguida temos as ACL's e o `http_acess` que já foram explicadas anteriormente. Mas vamos à alguns detalhes, na linha `acl localnet src 192.168.0.0` estamos criando uma acl para nossa rede local que têm origem (`src`) no IP `192.168.0.0`, por isso configure de acordo com sua rede. Ademais, temos a linha `acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos.txt"`, que é exatamento o que você está pensando, criamos uma acl que ler o regex contindo no arquivo `sitesproibidos.txt` e logo em seguida negamos com `http_access deny localnet sitesproibidos` qualquer recurso da web que contenha um termo presente nesse arquivo.
 
-
+Agora que você sabe os significados das diretivas, sinta-se a vontade pra acessar a [documentação oficial](http://www.squid-cache.org/Doc/config/).
 
 
 
