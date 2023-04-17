@@ -59,7 +59,7 @@ Abra o arquivo `squid.conf` e adicione as sequintes diretivas ao final do arquiv
 
 
 ```
-http_port 3128
+http_port 3128 transparent
 error_directory /usr/share/squid/errors/Portuguese
 cache_mem 1024 MB
 cache_dir ufs /var/spool/squid 10000 16 256
@@ -69,12 +69,12 @@ cache_swap_low 70
 cache_swap_high 95
 access_log daemon:/var/log/squid/access.log squid
 cache_log /var/log/squid/cache.log
-acl localnet src 192.168.0.0
+acl localnet src 192.168.1.0/24
 acl Safe_ports port 80 # http
-acl Safe_ports port 21 # ftp
+acl Safe_ports port 21 # ssh
 acl Safe_ports port 443 # https
 http_access deny !Safe_ports
-acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos.txt"
+acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos"
 http_access deny localnet sitesproibidos
 http_access allow localnet
 http_access allow all
@@ -96,7 +96,11 @@ Vamos ao significado de cada uma das diretivas pra você saber o que estamos con
 * `cache_log /var/log/squid/cache.log`: define o arquivo de log onde serão registradas as ações relacionadas ao cache de objetos;
 * Em seguida temos as ACL's e o `http_acess` que já foram explicadas anteriormente. Mas vamos à alguns detalhes, na linha `acl localnet src 192.168.0.0` estamos criando uma acl para nossa rede local que têm origem (`src`) no IP `192.168.0.0`, por isso configure de acordo com sua rede. Ademais, temos a linha `acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos.txt"`, que é exatamento o que você está pensando, criamos uma acl que ler o regex contindo no arquivo `sitesproibidos.txt` e logo em seguida negamos com `http_access deny localnet sitesproibidos` qualquer recurso da web que contenha um termo presente nesse arquivo.
 
-Agora que você sabe os significados das diretivas, sinta-se a vontade pra acessar a [documentação oficial](http://www.squid-cache.org/Doc/config/).
+Agora que você sabe os significados das diretivas, sinta-se a vontade pra acessar a [documentação oficial](http://www.squid-cache.org/Doc/config/). Veja como está meu arquivo `squid.conf`:
+
+![image](https://user-images.githubusercontent.com/104470835/232611273-5e721b3b-7554-401e-8282-6e7afc91cab3.png)
+
+
 
 
 
