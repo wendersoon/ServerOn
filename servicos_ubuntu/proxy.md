@@ -53,8 +53,40 @@ São muitas as personalizações que o Squid permite-nos, vimos apenas um punhad
 
 ## Configuração
 
+Utilizarei as configurações que foram apresentadas em sala de aula, pois elas possuem o essencial para o que nos propomos aqui. 
+
+Abra o arquivo `squid.conf` e adicione as sequintes diretivas ao final do arquivo ou, se preferir, pode apagar toda a documentação (lembre-se que temos nosso backup se as coisas derem errado) e colar as configurações abaixo, para apagar tudo dentro do arquivo user o comando `> squid.conf`:
 
 
+```
+http_port 3128
+error_directory /usr/share/squid/errors/Portuguese
+cache_mem 1024 MB
+cache_dir ufs /var/spool/squid 10000 16 256
+maximum_object_size_in_memory 64 KB
+maximum_object_size 512 MB
+cache_swap_low 70
+cache_swap_high 95
+access_log daemon:/var/log/squid/access.log squid
+cache_log /var/log/squid/cache.log
+acl localnet src 192.168.1.0/24
+acl Safe_ports port 80 # http
+acl Safe_ports port 21 # ftp
+acl Safe_ports port 443 # https
+http_access deny !Safe_ports
+acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos"
+http_access deny localnet sitesproibidos
+http_access allow localnet
+http_access allow all
+```
 
+Vamos ao significado de cada uma das diretivas pra você saber o que estamos configurando, são eles:
 
+* `http_port 3128 (intercept ou transparent)`: define a porta em que o Squid escutará as conexões HTTP;
+* `error_directory /usr/share/squid/errors/Portuguese`: : define o diretório onde estão as páginas de erro do Squid em português. Veja a imagem dele baixo:
+
+![image](https://user-images.githubusercontent.com/104470835/232602617-303a6a7f-39b6-4a48-badb-1c445ac3db58.png)
+
+* `cache_mem 1024 MB`: define a quantidade de memória RAM que será utilizada para armazenar objetos em cache, **essa configuração depende das especifícações de seu servidor**.
+* `cache_dir ufs /var/spool/squid 10000 16 256`: define o diretório onde serão armazenados os objetos em cache. Essa diretiva possui alguns parâmetros adicionais como: `ufs`(Unix File System) - é o tipo de sistema de arquivos que o Squid usa no armazenamento da cache; `10000`
 
