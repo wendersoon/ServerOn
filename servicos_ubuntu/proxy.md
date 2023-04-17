@@ -29,8 +29,6 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão ne
 
 * `errorpage.css` é um arquivo css usado para personalizar a página de erro do Squid. A página de erro é exibida quando um usuário tenta acessar um site bloqueado ou quando ocorre um erro no servidor proxy. Nesse arquivo, podemos ter uma página personalizada com o logo da empresa etc.
 
-Como já dito anteriormente em instalações de outros serviços, aqui irei trabalhar apenas com as configurações básicas do servidor, que se encontram no arquivo `squid.conf`, para que tenhamos um serviço minimamente funcional.
-
 ## Um Pouco Antes da Configuração
 
 ***A configuração é logo após essa secção***
@@ -48,6 +46,13 @@ Conforme a imagem acima, são as recomendações de configurações mínimas que
 Ademais, a diretiva `acl` é usada em conjunto com outra chamada `http_access` que é a que define as regras de acesso aos recursos da web com base em uma ou mais ACLs definidas **anteriormente** no arquivo `squid.conf` - veja que destaquei que precisa ser anterior porquê o arquivo de configuração é lido de cima para baixo - essa diretiva é usada para permitir ou negar o acesso aos recursos, também conta com dois parâmetros principais que são `allow` e `deny` (fazem justamente o que nome sugere). Por exemplo, temos na imagem acima o seguinte trecho `http_access deny !Safe_ports`, isso está me dizendo que a diretiva nega(`deny`) o acesso a todas as portas que **não**(`!`) estão listadas em `Safe_ports`. Exemplificando menlhor, se a ACL `Safe_ports` incluir as portas 80, 443, 8080 e 8443, a diretiva `http_access deny !Safe_ports` negará o acesso a todas as outras portas, exceto essas quatro portas seguras.
 
 ![image](https://user-images.githubusercontent.com/104470835/232590264-5156e9f0-d553-4179-9102-284f9d0f9778.png)
+
+Nesse print temos duas diretivas que trabalham em conjunto e são muito importantes no uso de um servidor proxy. São elas as `cache_swap_low` e `cache_swap_high`, essas duas diretivas especificam, respectivamente, o limite inferior e superior para o uso do disco rígido em relação ao cache de objetos do Squid. Os valores definidos em cada uma são porcentagens do espaço total do disco dedicado ao cache, o primeiro valor significa que o Squid começará a remover objetos do cache quando o uso do disco atingir 90% e o segundo valor diz que o Squid começará a recusar novas solicitações de cache quando o uso do disco atingir ou ultrapassar 95%.
+
+São muitas as personalizações que o Squid permite-nos, vimos apenas um punhado das principais configurações e não é meu objetivo, neste projeto, abordar cada uma delas e sim para que tenhamos um servidor proxy minimamente funcional. Então por isso, vamos as configurações!
+
+## Configuração
+
 
 
 
