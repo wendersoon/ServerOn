@@ -112,8 +112,25 @@ Se tudo deu certo até aqui, então reinicie com `sudo /etc/init.d/squid restart
 
 ## Teste do Servidor 
 
+Enfim, terminado a configuração vamos testar se nosso servidor está funcionando. Para isso temos de adicionar o IP do servidor nas configurações de rede da máquina da onde partirão os acessos e isso vai depender de qual sistema operacional você está usando, então se você não saber com fazer pode está lendo esse artigo que irá ajudar([artigo](https://www.avast.com/pt-br/c-how-to-set-up-a-proxy)) 
 
+![image](https://user-images.githubusercontent.com/104470835/232621073-588bc992-163d-4ddb-acc7-9064175acacc.png)
 
+Depois de configurando, podemos ver os logs de acesso em `sudo nano /var/log/squid/access.log`:
+
+![image](https://user-images.githubusercontent.com/104470835/232621590-89c989a8-7d96-4cf9-8340-66660e54f03a.png)
+
+E também o log da cache com `sudo nano /var/log/squid/cache.log`
+
+![image](https://user-images.githubusercontent.com/104470835/232621805-f1130aae-8b6e-4384-8294-3e63d5665d17.png)
+
+E por fim, podemos ver os objetos da cache que estão no caminho `/var/spool/squid`. Perceba na imagem abaixo os vários diretórios criados, você pode está explorando eles em busca dos dados.
+
+![image](https://user-images.githubusercontent.com/104470835/232622045-2e3fb4ea-e6e2-47b7-9adf-8ff0845192fa.png)
+
+**Está funcionando!**
+
+Terminamos aqui essa parte do projeto. Até o próximo, obrigado!
 
 
 
