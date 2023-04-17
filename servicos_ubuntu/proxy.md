@@ -132,8 +132,11 @@ E por fim, podemos ver os objetos da cache que estão no caminho `/var/spool/squ
 
 Terminamos aqui essa parte do projeto. Até o próximo, obrigado!
 
+<div align = "center">
 
+![meme-32513-muito-obrigado!-](https://user-images.githubusercontent.com/104470835/232622936-5b1e935d-de54-4749-a620-c0638c7afbcd.jpg)
 
+<div>
 
 
 
