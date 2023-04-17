@@ -71,7 +71,7 @@ access_log daemon:/var/log/squid/access.log squid
 cache_log /var/log/squid/cache.log
 acl localnet src 192.168.1.0/24
 acl Safe_ports port 80 # http
-acl Safe_ports port 21 # ssh
+acl Safe_ports port 21 # ftp
 acl Safe_ports port 443 # https
 http_access deny !Safe_ports
 acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos"
@@ -94,11 +94,18 @@ Vamos ao significado de cada uma das diretivas pra você saber o que estamos con
 * `cache_swap_low 70` e `cache_swap_high 95`: já foram explicados mais acima;
 * `access_log daemon:/var/log/squid/access.log squid`: define o arquivo de log onde serão registradas as requisições e respostas HTTP;
 * `cache_log /var/log/squid/cache.log`: define o arquivo de log onde serão registradas as ações relacionadas ao cache de objetos;
-* Em seguida temos as ACL's e o `http_acess` que já foram explicadas anteriormente. Mas vamos à alguns detalhes, na linha `acl localnet src 192.168.0.0` estamos criando uma acl para nossa rede local que têm origem (`src`) no IP `192.168.0.0`, por isso configure de acordo com sua rede. Ademais, temos a linha `acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos.txt"`, que é exatamento o que você está pensando, criamos uma acl que ler o regex contindo no arquivo `sitesproibidos.txt` e logo em seguida negamos com `http_access deny localnet sitesproibidos` qualquer recurso da web que contenha um termo presente nesse arquivo.
+* Em seguida temos as ACL's e o `http_acess` que já foram explicadas anteriormente. Mas vamos à alguns detalhes, na linha `acl localnet src 192.168.0.0` estamos criando uma acl para nossa rede local que têm origem (`src`) no IP `192.168.0.0`, por isso configure de acordo com sua rede. Ademais, temos a linha `acl sitesproibidos url_regex -i "/etc/squid/sitesproibidos.txt"`, que é exatamento o que você está pensando, criamos uma acl que ler o regex contindo no arquivo `sitesproibidos` e logo em seguida negamos com `http_access deny localnet sitesproibidos` qualquer recurso da web que contenha um termo presente nesse arquivo.
 
 Agora que você sabe os significados das diretivas, sinta-se a vontade pra acessar a [documentação oficial](http://www.squid-cache.org/Doc/config/). Veja como está meu arquivo `squid.conf`:
 
-![image](https://user-images.githubusercontent.com/104470835/232611273-5e721b3b-7554-401e-8282-6e7afc91cab3.png)
+![image](https://user-images.githubusercontent.com/104470835/232612749-cbf4a01f-d259-4e50-abb9-cd442f743c64.png)
+
+Depois de feito isso e antes de reiniciar o serviço, devemos criar o diretório de cache definido em `cache_dir`. Para isso utilize o comando `sudo mkdir -p /var/spool/squid` e altere as permissões (você já pode está verificando com ls -l dentro do diretório se já está `proxy:proxy`) desse diretório para o proxy com o comando `chown proxy:proxy /var/spool/squid`. Em seguida crie dentro `/etc/squid/` o arquivo *sitesproibidos* com o comando `touch sitesproibidos` e se quiser já adicionar alguma palavra para testar depois fique a vontade, no meu caso adicionei a palavra "quadrado".
+
+E por fim, use o comando da verdade (kkk) para verificar se as configurações estão corretas, se não aprecer nenhum aviso é porquê está tudo ok! O comando é `squid -k check`. Se tudo certo, então reinicie com `sudo /etc/init.d/squid restart`, pode demorar um pouco.
+
+## 
+
 
 
 
