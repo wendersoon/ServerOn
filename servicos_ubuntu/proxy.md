@@ -31,5 +31,25 @@ Antes de prosserguimos é importante termos um resumo dos arquivos que estão ne
 
 Como já dito anteriormente em instalações de outros serviços, aqui irei trabalhar apenas com as configurações básicas do servidor, que se encontram no arquivo `squid.conf`, para que tenhamos um serviço minimamente funcional.
 
-## Configuração
+## Um Pouco Antes da Configuração
+
+***A configuração é logo após essa secção***
+
+Antes de iniciarmos as configurações, é recomendável fazermos uma cópia do arquivo de configuração squid.conf. Isso se deve ao fato de que, como veremos mais adiante, é um arquivo extenso e muito bem documentado. Para fazer uma cópia de backup, utilize o comando `sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.backup`. 
+
+Depois de ter feito isso, abra o arquivo de configuração principal com o comando `sudo nano squid.conf` (lembre-se de estar no diretório correspondente), pare um momento e leia-o. Verá que dos serviços que trabalhamos até agora é o que apresenta uma documentação muito extensa e detalhada. Não abordaremos todos os aspectos desse documento, mas acho interessante darmos uma olhada nos principais para termos um entendimento geral do arquivo.
+
+![image](https://user-images.githubusercontent.com/104470835/232581249-92d56fc0-477b-486f-a55c-28b808d971b8.png)
+
+Conforme a imagem acima, são as recomendações de configurações mínimas que são necessárias para iniciar e usar o Squid como um servidor proxy. Preste atenção na diretiva `acl` que acompanha todas as linhas desmarcadas desse trecho. Essa diretiva (`acl` - Access Control List) é usada para definir uma **lista de controle de acesso** que pode ser usada para **permitir ou negar** o acesso a determinados recursos. Elas podem ser usadas em vários contextos, isto é, as `acl` podem ser definidas de várias maneiras no arquivo `squid.conf`, isto é, definidas por endereço IP, nome de domínio, expressões regulares, por lista de palavras-chave, por hora do dia, por tipo de arquivo etc., realmente a lista é longa. Por exemplo, a diretiva `acl Safe_ports port 21` está criando uma ACL chamada `Safe_ports` que permite ou nega o acesso à porta 21. 
+
+![image](https://user-images.githubusercontent.com/104470835/232587024-b5fc43c1-932a-4902-8d6a-e70c9a4bd752.png)
+
+Ademais, a diretiva `acl` é usada em conjunto com outra chamada `http_access` que é a que define as regras de acesso aos recursos da web com base em uma ou mais ACLs definidas **anteriormente** no arquivo `squid.conf` - veja que destaquei que precisa ser anterior porquê o arquivo de configuração é lido de cima para baixo - essa diretiva é usada para permitir ou negar o acesso aos recursos, também conta com dois parâmetros principais que são `allow` e `deny` (fazem justamente o que nome sugere). Por exemplo, temos na imagem acima o seguinte trecho `http_access deny !Safe_ports`, isso está me dizendo que a diretiva nega(`deny`) o acesso a todas as portas que **não**(`!`) estão listadas em `Safe_ports`. Exemplificando menlhor, se a ACL `Safe_ports` incluir as portas 80, 443, 8080 e 8443, a diretiva `http_access deny !Safe_ports` negará o acesso a todas as outras portas, exceto essas quatro portas seguras.
+
+![image](https://user-images.githubusercontent.com/104470835/232590264-5156e9f0-d553-4179-9102-284f9d0f9778.png)
+
+
+
+
 
