@@ -29,3 +29,4 @@ Todas as etapas desse projeto estão listados abaixo:
 * [SERVIÇO DNS: Bind9](https://github.com/dswendersonmelo/ServerOn/blob/main/servicos_ubuntu/bind9.md)
 * [SERVIÇO DE COMPARTILHAMENTO DE ARQUIVOS: Proftpd + SAMBA](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/ServerArquivo.md)
 * [SERVIÇO DHCP: ISC DHCP server](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/dhcp.md)
+* [SERVIÇO PROXY: Squid](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/proxy.md)
