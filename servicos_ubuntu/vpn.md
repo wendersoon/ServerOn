@@ -48,7 +48,6 @@ Vou abrir um desses pacotes e veja como consigo ver o contéudo:
 
 O que esperamos ao implementar o servidor VPN é que esse conteúdo esteja criptogrado e, consequetemente, não seja vísivel para quem quer que seja, a não ser o servidor e o cliente. Então, vamos a instalação!!
 
-
 ## Instalação 
 
 
