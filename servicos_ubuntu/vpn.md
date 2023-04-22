@@ -1,3 +1,5 @@
+# SERVIDOR VPN
+
 <div align = "center">
 
 <img src=https://user-images.githubusercontent.com/104470835/233728802-87489d86-361d-486c-8199-8fc3d15ff07a.png width="400"/>
@@ -84,6 +86,43 @@ O diretório `/etc/ipsec.d` é usado pelo strongswan para guardar arquivos de co
 Bom, esse foram os arquivos e diretórios que foram criados com a instalação do *strongswan*. Agora vamos a configuração!
 
 ## Configuração
+
+1. Vamos abrir o arquivo de configuração do IPSec com o comando `nano /etc/ipsec.conf`. Perceba que o arquivo é dividido em 3 secções que são:
+
+![Screencast from 22-04-2023 10_55_23](https://user-images.githubusercontent.com/104470835/233789209-9669d813-cca5-4197-8797-22a367179039.gif)
+
+* `config`: essa secção contém opções de configuração global para o strongswan;
+* `conn`: essa secção contém opções de configuração para uma **conexão VPN específica**. Cada secção `conn` inclui opções relacionadas aos endereços IP locais e remotos, o método de autenticação, os algoritmos criptográficos a serem usados e outras opções específicas de conexão. Várias seções "conn" podem ser incluídas no arquivo "ipsec.conf" para definir várias conexões VPN*.
+* `ca`: essa secção é usada para definir uma autoridade de certificação (CA) usada para autenticar certificados usados em conexões VPN baseadas em IPsec.
+
+Antes de tudo crie um arquivo de backup com o comando `cp ipsec.conf ipsec.conf.backup`, pois se tudo der errado podemos restaurar a versão padrão. Agora apague tudo de `ipsec.conf` com o comando `> ipsec.conf`
+Agora vamos adicionar as seguintes configuraçãos ao final do arquivo no **SERVIDOR**:
+
+```
+config setup
+charondebug="all"
+strictcrlpolicy=yes
+uniqueids = no
+conn %default
+conn ServidorParaPc
+authby=secret
+auto=route
+keyexchange=ike
+left=192.168.100.100
+right=192.168.100.200
+type=transport
+esp=aes256-sha2_256!
+```
+
+
+
+
+
+
+
+* `keys`: essa secção contém as chaves compartilhadas usadas para autenticar as conexões VPN. Cada secção `key` inclui opções relacionadas aos endereços IP locais e remotos e ao segredo compartilhado usado para autenticação.
+
+
 
 
 
