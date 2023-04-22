@@ -42,10 +42,11 @@ Agora acesse seu domínio e atualize a página diversas vezes, para que tenhamos
 
 ![image](https://user-images.githubusercontent.com/104470835/233751463-58b0cb44-2a93-4cac-8fd2-025e9a4d7442.png)
 
+Vou abrir um desses pacotes e veja como consigo ver o contéudo:
 
+![Screencast from 21-04-2023 21_18_53](https://user-images.githubusercontent.com/104470835/233751876-056f85fd-124f-4f7a-94e3-fbc0efb6ea1b.gif)
 
-
-
+O que esperamos ao implementar o servidor VPN é que esse conteúdo esteja criptogrado e, consequetemente, não seja vísivel para quem quer que seja, a não ser o servidor e o cliente. Então, vamos a instalação!!
 
 
 ## Instalação 
