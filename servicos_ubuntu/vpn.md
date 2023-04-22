@@ -42,12 +42,29 @@ Agora acesse seu domínio e atualize a página diversas vezes, para que tenhamos
 
 ![image](https://user-images.githubusercontent.com/104470835/233751463-58b0cb44-2a93-4cac-8fd2-025e9a4d7442.png)
 
-Vou abrir um desses pacotes e veja como consigo ver o contéudo:
+Vou abrir um desses pacotes e veja como consigo ver o conteúdo:
 
 ![Screencast from 21-04-2023 21_18_53](https://user-images.githubusercontent.com/104470835/233751876-056f85fd-124f-4f7a-94e3-fbc0efb6ea1b.gif)
 
 O que esperamos ao implementar o servidor VPN é que esse conteúdo esteja criptogrado e, consequetemente, não seja vísivel para quem quer que seja, a não ser o servidor e o cliente. Então, vamos a instalação!!
 
 ## Instalação 
+
+Vamos instalar o *strongswan* no **servidor** e na **máquina cliente** (no meu caso será minha máquina real). Todo o processo de instalação e configuração é semelhante nas duas máquinas, porém existe alguns detalhes que os difereciam e quando isso ocorrer vou mostrar separadamente.
+
+Para instalar use o comando `apt-get install strongswan`. Diferente dos outros serviços que instalamos, o **strongswan** não têm somente um diretório mas também arquivos de configuração que se localizam dentro do diretório `/etc/`. Vamos ver cada um deles, começando pelo diretório criado com a instalação `/etc/strongswan.d`:
+
+![image](https://user-images.githubusercontent.com/104470835/233783661-2b0d5705-09f4-4547-bd08-5f6e19ed9231.png)
+
+*Se você quiser ver as informações sobre esses arquivos na documentação, acesse esse [link](https://docs.strongswan.org/docs/6.0/config/config.html)*
+
+* `/charon`: este diretório contém trechos de configuração comentados para todos os plugins ativados e instalados.
+
+![image](https://user-images.githubusercontent.com/104470835/233784519-0776cdc9-4323-4ccc-8725-6899bc0b5f3c.png)
+
+* `charon-logging.conf`: é o arquivo de configuração de logging do StrongSwan, usado para definir como o daemon deve registrar informações. Você pode usar esse arquivo para ajustar a quantidade e o nível de detalhes dos logs do StrongSwan.
+* `charon.conf`: é o arquivo de configuração principal do daemon Charon. Ele contém configurações que afetam diretamente o comportamento da conexão VPN, como a autenticação e a criptografia.
+* `starter.conf`: é o arquivo de configuração do processo Starter, que é usado para iniciar o daemon Charon e configurar seu comportamento. Ele contém configurações que afetam a inicialização do StrongSwan e o gerenciamento de conexões VPN.
+
 
 
