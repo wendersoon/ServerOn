@@ -74,7 +74,17 @@ Para instalar use o comando `apt-get install strongswan`. Diferente dos outros s
 
 O diretório `/etc/ipsec.d` é usado pelo strongswan para guardar arquivos de configuração e certificados usados em conexões IPSec. Se você abrir esses diretórios verá que estão vazios. Então não entraremos em detalhes aqui mas se sentiu-se curioso, acesse a [documentação](https://wiki.strongswan.org/projects/strongswan/wiki/IpsecDirectory).
 
-### Arquivos No Diretório `/etc/`
+### Arquivos No Diretório `/etc/`:
+
+* `strongswan.conf`: esse arquivo é usado para configurar as opções globais que se aplicam a toda a instalação do strongswan;
+* `ipsec.conf`: é o arquivo de configuração usado pelo strongSwan para configurar conexões VPN baseadas em IPsec;
+* `ipsec.secrets` é um arquivo de configuração usado para armazenar senhas/chaves compartilhados usados para autenticação em conexões VPN baseadas em IPsec. Para mais detalhes, [veja aqui](https://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets).
+
+
+Bom, esse foram os arquivos e diretórios que foram criados com a instalação do *strongswan*. Agora vamos a configuração!
+
+## Configuração
+
 
 
 
