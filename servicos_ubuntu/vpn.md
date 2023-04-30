@@ -204,7 +204,10 @@ Agora, como segundo teste, vou dá ping da máquina cliente para o servidor com 
 
 ![image](https://user-images.githubusercontent.com/104470835/235379092-8d933b71-3efe-4c97-abf5-f6db56825574.png)
 
-Perceba que os pacotes de PING estão com o protocolo ESP (*Encapsulating Security Payload*). 
+Perceba que os pacotes de PING estão com o protocolo ESP (*Encapsulating Security Payload*) que é um dos protocolos usados no IPsec para fornecer serviços de segurança de rede, ele protege os dados transmitidos entre as extremidades da conexão VPN, encapsulando-os em um pacote criptografado.
+
+E por fim, como teste final, vou acessar o meu site `www.meusite753.com` e capturar os pacotes com wireshark:
+
 
 
 
