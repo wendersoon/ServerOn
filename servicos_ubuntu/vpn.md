@@ -162,7 +162,7 @@ Certos desse detalhe, vamos entender o que cada diretiva significa na configura�
 
 * `esp=aes128-sha1-modp2048`: e por fim, essa diretiva define o conjunto de algoritmos de criptografia e autenticação que serão usados para proteger a comunicação. No caso, o conjunto especificado usa o algoritmo de criptografia AES com chave de 128 bits, o algoritmo de autenticação SHA-1 e um grupo de modos de diferença finita de 2048 bits (MODP2048) para a troca de chaves Diff.
 
-2. Vamos adicionar a chave compartilhada PSK que será usada para autenticar nossa conexão VPN. O arquivo onde é configurando chama-se `ipsec.secrets` e como mostrei mais acima, ele também se localiza no diretório `/etc/`. O padrão para adicionar a senha é `<IP-LOCAL IP-REMOTO: PSK "senha">`, lembrando que o IP local é sempre o que está configurado na diretiva `left` como explique acima.
+2. Vamos adicionar a chave compartilhada PSK que será usada para autenticar nossa conexão VPN. O arquivo onde é configurando chama-se `ipsec.secrets` e como mostrei mais acima, ele também se localiza no diretório `/etc/`. O padrão para adicionar a senha é `<IP-LOCAL IP-REMOTO: PSK "senha">`, lembrando que o IP local é sempre o que está configurado na diretiva `left` como expliquei acima.
 
 Portanto, após abrir o arquivo com `nano /etc/ipsec.secrets`, adcionei as seguintes configurações:
 
@@ -174,4 +174,22 @@ Portanto, após abrir o arquivo com `nano /etc/ipsec.secrets`, adcionei as segui
 
 ![image](https://user-images.githubusercontent.com/104470835/235376541-3897575b-9ea8-4392-9343-5ab495f9a5bd.png)
 
-Salve os arquivos
+Salve os arquivos e reinicie o serviço com o comando `sudo /etc/init.d/ipsec restart`.
+
+3. Vamos verificar os status do serviço em ambas as máquinas com o comando `sudo /etc/init.d/ipsec status`:
+
+* **SERVIDOR**:
+
+![image](https://user-images.githubusercontent.com/104470835/235377090-dacd5294-dd36-4b08-bf5a-547ff4fc3a8a.png)
+
+* **CLIENTE**:
+
+![image](https://user-images.githubusercontent.com/104470835/235377140-33daeb68-e07d-40bd-adca-f6dbdefd638f.png)
+
+Perceba que a conexão vpn usando o ipsec foi estabelecida entre as duas máquinas e o nome da conexão é como definimos na diretiva `conn my_ipsec_connection`. 
+
+## Teste do Servidor
+
+
+
+
