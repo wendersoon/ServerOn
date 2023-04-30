@@ -190,6 +190,12 @@ Perceba que a conexão vpn usando o ipsec foi estabelecida entre as duas máquin
 
 ## Teste do Servidor
 
+Vou utilizar o comando `watch ipsec statusall` que serve para monitorar o status de todas as conexões IPsec ativas no sistema em tempo real. Quando executamos esse comando, ele exibe uma tabela que mostra as informações de cada conexão, incluindo seu estado (estabelecido, iniciado, fechado etc.), os endereços IP das extremidades (left e right), a política de segurança (SA) e outras informações. Vejamos como é apresentado:
 
+* **SERVIDOR**:
+
+![Screencast from 30-04-2023 19_17_13](https://user-images.githubusercontent.com/104470835/235378738-ba2c9211-9591-4dae-adb9-a5ae998cc2bb.gif)
+
+* **
 
 
