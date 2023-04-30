@@ -162,3 +162,16 @@ Certos desse detalhe, vamos entender o que cada diretiva significa na configura�
 
 * `esp=aes128-sha1-modp2048`: e por fim, essa diretiva define o conjunto de algoritmos de criptografia e autenticação que serão usados para proteger a comunicação. No caso, o conjunto especificado usa o algoritmo de criptografia AES com chave de 128 bits, o algoritmo de autenticação SHA-1 e um grupo de modos de diferença finita de 2048 bits (MODP2048) para a troca de chaves Diff.
 
+2. Vamos adicionar a chave compartilhada PSK que será usada para autenticar nossa conexão VPN. O arquivo onde é configurando chama-se `ipsec.secrets` e como mostrei mais acima, ele também se localiza no diretório `/etc/`. O padrão para adicionar a senha é `<IP-LOCAL IP-REMOTO: PSK "senha">`, lembrando que o IP local é sempre o que está configurado na diretiva `left` como explique acima.
+
+Portanto, após abrir o arquivo com `nano /etc/ipsec.secrets`, adcionei as seguintes configurações:
+
+* **SERVIDOR**:
+
+![image](https://user-images.githubusercontent.com/104470835/235376528-224f6e88-35e7-4fcd-b680-ca1316e980d4.png)
+
+* **CLIENTE**:
+
+![image](https://user-images.githubusercontent.com/104470835/235376541-3897575b-9ea8-4392-9343-5ab495f9a5bd.png)
+
+Salve os arquivos
