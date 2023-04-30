@@ -200,6 +200,12 @@ Vou utilizar o comando `watch ipsec statusall` que serve para monitorar o status
 
 ![Screencast from 30-04-2023 19_24_20](https://user-images.githubusercontent.com/104470835/235378772-d77ca4e1-71d0-4088-957d-4f3d7e42da69.gif)
 
+Agora, como segundo teste, vou dá ping da máquina cliente para o servidor com `ping IP-DO-SERVIDOR` e capturar os pacotes com wireshark. Veja como os pacotes aparecem:
+
+![image](https://user-images.githubusercontent.com/104470835/235379092-8d933b71-3efe-4c97-abf5-f6db56825574.png)
+
+Perceba que os pacotes de PING estão com o protocolo ESP (*Encapsulating Security Payload*). 
+
 
 
 
