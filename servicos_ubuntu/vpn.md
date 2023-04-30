@@ -95,35 +95,70 @@ Bom, esse foram os arquivos e diretórios que foram criados com a instalação d
 * `conn`: essa secção contém opções de configuração para uma **conexão VPN específica**. Cada secção `conn` inclui opções relacionadas aos endereços IP locais e remotos, o método de autenticação, os algoritmos criptográficos a serem usados e outras opções específicas de conexão. Várias seções "conn" podem ser incluídas no arquivo "ipsec.conf" para definir várias conexões VPN*.
 * `ca`: essa secção é usada para definir uma autoridade de certificação (CA) usada para autenticar certificados usados em conexões VPN baseadas em IPsec.
 
-Antes de tudo crie um arquivo de backup com o comando `cp ipsec.conf ipsec.conf.backup`, pois se tudo der errado podemos restaurar a versão padrão. Agora apague tudo de `ipsec.conf` com o comando `> ipsec.conf`
-Agora vamos adicionar as seguintes configuraçãos ao final do arquivo no **SERVIDOR**:
+Antes de tudo crie um arquivo de backup com o comando `cp /etc/ipsec.conf /etc/ipsec.conf.backup`, pois se tudo der errado podemos restaurar a versão padrão. Agora apague tudo de `ipsec.conf` com o comando `> ipsec.conf` e vamos adicionar as seguintes configuraçãos no arquivo padrão(`ipsec.conf`), lembrando que as configurações são distintas no servidor e cliente:
+
+* **SERVIDOR**:
 
 ```
 config setup
-charondebug="all"
-strictcrlpolicy=yes
-uniqueids = no
-conn %default
-conn ServidorParaPc
-authby=secret
-auto=route
-keyexchange=ike
-left=192.168.100.100
-right=192.168.100.200
-type=transport
-esp=aes256-sha2_256!
+    charondebug="all"
+    strictcrlpolicy=yes
+    uniqueids=no
+
+conn my_ipsec_connection
+    authby=psk
+    keyexchange=ikev2 
+    left=192.168.0.101
+    right=192.168.0.107
+    auto=start
+    type=transport
+    esp=aes128-sha1-modp2048
 ```
 
+* **CLIENTE**:
+```
+config setup
+    charondebug="all"
+    strictcrlpolicy=yes
+    uniqueids=no
 
+conn my_ipsec_connection
+    authby=psk
+    keyexchange=ikev2 
+    left=192.168.0.107
+    right=192.168.0.101
+    auto=start
+    type=transport
+    esp=aes128-sha1-modp2048
+```
 
+Você deve está se perguntado, onde está a diferença nessas configurações? Perceba nas diretivas `left` e `right` que os IP's estão "invertidos". Isso acontece porque essas diretivas referem-se aos endereçoes IP dos pontos finais da conexão IPsec a partir da perspectiva do própio host que está sendo configurado. Ou seja, o `left` é o endereço IP do host local e o `right` é o endereço IP do host remoto, a partir da perspectiva do host em que a configuração está definida. Fiz uma imagem que esclarece essa explicação, veja abaixo:
 
+![image](https://user-images.githubusercontent.com/104470835/235372943-2482ccf5-2ad0-4a6f-9316-960dffaa5c78.png)
 
+Certos desse detalhe, vamos entender o que cada diretiva significa na configuração que implementamos:
 
+* `config setup`: como já falamos, é a diretiva que define as opções globais de configuração para o conjunto do arquivo de configuração;
 
-* `keys`: essa secção contém as chaves compartilhadas usadas para autenticar as conexões VPN. Cada secção `key` inclui opções relacionadas aos endereços IP locais e remotos e ao segredo compartilhado usado para autenticação.
+* `charondebug="all"`: define o nível de depuração do daemon do IPSec, o charon, para "all", exibindo todas as mensagens de depuração, muito bom se você que uma depuração completa;
 
+* `strictcrlpolicy=yes`: define a política de verificação de certificado para ser rigorosa;
 
+`uniqueids=no`: define se os identificadores únicos são permitidos ou não;
 
+* `conn my_ipsec_connection`: essa diretiva define uma nova conexão do IPSec chamada "my_ipsec_connection". As configurações específicas da conexão são definidas abaixo dela;
 
+* `authby=psk`: especifica que a autenticação será feita usando Pre-Shared Key (PSK). PSK é um método de autenticação em que as duas partes envolvidas na comunicação compartilham uma chave secreta que é usada para autenticar a conexão, logo abaixo vamos definir a chave que usaremos;
 
+* `keyexchange=ikev2`: essa diretiva informa que o protocolo de troca de chaves a ser usado na negociação de segurança é o *Internet Key Exchange version 2* (IKEv2);
+
+* `left`: como mencionei antes, essa diretiva especifica o endereço IP do host local, ou seja, o host que está executando o arquivo de configuração;
+
+* `right`: e também abordado mais acima, essa diretiva nos diz o endereço IP do host remoto, isto é, o host com o qual o host local está se comunicando;
+
+* `auto=start`: define que a conexão deve ser iniciada automaticamente quando o daemon do IPSec é iniciado.
+
+* `type=transport`: define que o modo de operação do IPSec é o modo transporte. No modo transporte, o cabeçalho original do pacote IP é mantido, mas os dados do pacote são criptografados e protegidos com uma integridade de mensagem. Esse modo é geralmente usado quando se quer proteger o tráfego de dados entre hosts individuais em uma rede. O outro modo disponível é modo túnel que encapsula todo o pacote IP original dentro de um novo pacote IP, adicionando um novo cabeçalho ao pacote encapsulado e é frequentemente usado para conectar duas redes remotas, onde todo o tráfego entre as redes é protegido;
+
+* `esp=aes128-sha1-modp2048`: e por fim, essa diretiva define o conjunto de algoritmos de criptografia e autenticação que serão usados para proteger a comunicação. No caso, o conjunto especificado usa o algoritmo de criptografia AES com chave de 128 bits, o algoritmo de autenticação SHA-1 e um grupo de modos de diferença finita de 2048 bits (MODP2048) para a troca de chaves Diff.
 
