@@ -208,6 +208,22 @@ Perceba que os pacotes de PING estão com o protocolo ESP (*Encapsulating Securi
 
 E por fim, como teste final, vou acessar o meu site `www.meusite753.com` e capturar os pacotes com wireshark:
 
+![Screencast from 30-04-2023 20_19_01](https://user-images.githubusercontent.com/104470835/235380586-18bfc0e5-b3e0-4a22-a936-8d845d085b55.gif)
+
+Perceba que cada vez que atualizo a página, os pacotes que são detectados pelo wireshark são do protocolo ESP. Isso significa que toda minha comunicação com o meu servidor está criptografada.
+
+**ESTÁ FUNCIONANDO!**
+
+Muito obrigado se você leu até aqui!
+
+<div align="center">
+
+![46eae4c4ff91c03514a7096538740b42](https://user-images.githubusercontent.com/104470835/235380869-dd87cc58-1b86-4f5a-8619-385076110b41.gif)
+
+</div>
+
+
+
 
 
 
