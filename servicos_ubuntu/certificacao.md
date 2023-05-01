@@ -34,5 +34,21 @@ Não vamos trabalhar com esse diretório.
 
 2. O segundo passo é habilitar o módulo SSL no Apache2 e para isso use o comando `sudo a2enmod ssl`. Em seguida, reinicie o serviço com `sudo /etc/init.d/apache2 restart`.
 
-3. Vamos criar um novo diretório para guardar o certificado privado que vamos gerar. Para criar o diretório, utilize o comando `sudo mkdir /etc/apache2/ssl`. E para gerar o certificado utilize o comando `sudo openssl req -x509 -nodes -days 365 -newkeyrsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt`
+3. Vamos criar um novo diretório para guardar o certificado privado que vamos gerar. Para criar o diretório, utilize o comando `sudo mkdir /etc/apache2/ssl`. E para gerar o certificado utilize o comando `sudo openssl req -x509 -nodes -days 365 -newkeyrsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt`. Vamos ver o que significa esse comando:
+
+* `openssl`: é o comando do bash utilizado para acessar as funcionalidades do OpenSSL;
+
+* `req`: é utilizado para gerar um certificado autoassinado;
+
+* `-x509`: essa opção é utilizada para especificar que um certificado autoassinado deve ser gerado;
+
+* `-nodes`: essa opção indica que a chave privada gerada não deve ser criptografada com uma senha;
+
+* `-days 365`: define a validade do certificado autoassinado por 365 dias;
+
+* `-newkey rsa:2048`: essa opção define que um novo par de chaves RSA deve ser gerado com um comprimento de 2048 bits;
+
+* `-keyout /etc/apache2/ssl/apache.key`: define o caminho e o nome do arquivo onde a chave privada gerada será armazenada;
+
+* `-out /etc/apache2/ssl/apache.crt`: define o caminho e o nome do arquivo onde o certificado autoassinado gerado será armazenado.
 
