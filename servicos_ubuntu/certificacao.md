@@ -16,6 +16,14 @@ E nessa parte do projeto iremos gerar um certificado privado para a página que 
 
 ***Todos os comandos serão em modo root***
 
+## Um Pouco Antes da Configuração
+
+Vou acessar a página que criei no tutorial do Apache2 atráves do domínio `www.meusite753.com` que configurei no tutorial do DNS. E vamos ver como está a certificação dele antes de implementarmos o SSL no servidor WEB:
+
+![Screencast from 01-05-2023 10_33_47](https://user-images.githubusercontent.com/104470835/235458887-ccf315e3-1a9a-434a-8e75-5af1aacdf861.gif)
+
+Perceba que não existe nenhum certificado ativo na página, após a configuração isso deve mudar.
+
 ## Instalação
 
 1 . Para instalar você deve usar o comando `sudo apt-get install openssl`. A instalação não cria nenhum diretório específico mas pode criar alguns arquivos de configuração em diretórios existentes como, por exemplo, `etc/ssl/` que é onde geralmente são armazenados os arquivos de certificado e chave. Então, por isso, vamos dá uma olhada nesse diretório:
