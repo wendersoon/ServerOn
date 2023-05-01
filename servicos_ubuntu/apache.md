@@ -104,6 +104,25 @@ Se você quiser monitorar os acessos em tempo real atráves do log, pode usar o 
 ![gif](https://github.com/dswendersonmelo/ServerOn/raw/main/servicos_ubuntu/sy1be-jd84l.gif)<br>
 O mesmo você pode fazer para o log de erros, o comando segue o mesmo padrão `sudo tail -f /var/log/apache2/error.log`.<br>
 
+## Certificação SSL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Habilitar o PHP no servidor
 
 Agora vamos habilitar o PHP, uma das linguagens mais populares no desenvolvimento web, no nosso servidor. Se você não sabe do que se trata, veja esse [artigo](https://www.hostinger.com.br/tutoriais/o-que-e-php-guia-basico?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=1001560).<br>
