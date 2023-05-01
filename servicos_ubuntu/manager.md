@@ -28,8 +28,47 @@ https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
 
 2. Crie um arquivo chamado `setup-repos.sh` e cole tudo o que apareceu na página do link.
 
-3. Por fim digite o comando `sh setup-repos.sh` para instalar o Webmin.
+3. Agora digite o comando `sh setup-repos.sh` para adicionar o repositório do webmin no sistema.
 
+4. E por fim, digite `sudo apt-get install webmin`
+
+## Teste do Serviço
+
+Após a conclusão da instalação, podemos acessar a ferramenta no navegador atráves da seguinte sintaxe `https://<IP_do_servidor>:10000`. No meu caso fica assim `https://192.168.0.101:10000`. Veja a primeira tela do serviço:
+
+![image](https://user-images.githubusercontent.com/104470835/235533794-d12dbd1d-e94e-42eb-9ffe-b4c3a365ec56.png)
+
+As credenciais de acesso são as mesmas do usário root do sistema. Agora daqui em diante você pode está explorando a ferramenta, eu irei mostrar apenas algumas telas abaixo.
+
+* Mudar a linguagem do sistema de gerenciamento:
+
+![image](https://user-images.githubusercontent.com/104470835/235534543-91e35cc8-1663-4775-876d-a815b4f0df36.png)
+
+* Serviços/Servidos implementados na máquina:
+
+![image](https://user-images.githubusercontent.com/104470835/235534879-f4949af1-f3dd-4441-9ae7-74eaacde23c3.png)
+
+* Uma página dedicada a mostrar todas as atualizações disponíveis dos utilitários e bibliotecas do servidor:
+
+![image](https://user-images.githubusercontent.com/104470835/235535119-ed8908ec-de64-4fa6-b38b-36119bf1908d.png)
+
+* Telas dos servidores com configurações completas ou quase completas, na imagem abaixo está o DNS Bind que configuramos:
+
+![image](https://user-images.githubusercontent.com/104470835/235535490-bbb200c6-ef31-44fc-9e30-35024d2fcefc.png)
+
+* Um painel de controle muito útil:
+
+![image](https://user-images.githubusercontent.com/104470835/235535697-61934285-c252-4556-9f50-69a6c51b4b74.png)
+
+Acho que deu de perceber como é útil essa ferramenta. Você pode estar esplorando-a, as vezes não haverá uma funcionalidade que você busca, pra isso a ferramenta disponibiliza uma aba para instalar módulos que podem ajudar.
+
+Terminamos por aqui essa parte do projeto. Obrigado pela leitura!
+
+<div align = "center"> 
+
+![giphy (1)](https://user-images.githubusercontent.com/104470835/235536391-526ac11f-4554-4683-b810-c3a9cf77240e.gif)
+
+</div>
 
 
 
