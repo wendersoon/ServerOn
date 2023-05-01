@@ -62,7 +62,7 @@ Após você digitar o comando, será solicitado algumas informações para o cer
 
 ![Screencast from 01-05-2023 10_39_55](https://user-images.githubusercontent.com/104470835/235459996-6bea397f-4cf7-425d-878b-32f12e44aee8.gif)
 
-4. Agora amos adicionar o caminho das chaves geradas no arquivo de configuração do módulo SSL/TLS do Apache2 chamado de `default-ssl.conf`, esse arquivo fica no diretório `/etc/apache2/sites-available/`. Se você têm dúvidas como abrir o arquivo use o comando `sudo nano /etc/apache2/sites-available/default-ssl.conf`. Após abrir, encontre essas diretivas:
+4. Por fim, vamos adicionar o caminho das chaves geradas no arquivo de configuração do módulo SSL/TLS do Apache2 chamado de `default-ssl.conf`, esse arquivo fica no diretório `/etc/apache2/sites-available/`. Se você têm dúvidas como abrir o arquivo use o comando `sudo nano /etc/apache2/sites-available/default-ssl.conf`. Após abrir, encontre essas diretivas:
 
 ![image](https://user-images.githubusercontent.com/104470835/235463932-1d6d09e9-5d83-451d-bede-f217b555eaa0.png)
 
@@ -70,23 +70,18 @@ E altere para os caminhos para as chaves que criamos no passo 3, veja o resultad
 
 ![image](https://user-images.githubusercontent.com/104470835/235473308-c5c69c69-a3ab-4395-bb44-3bbbd460b7f7.png)
 
-5. Por fim, no arquivo de configuração do seu site adicione as seguintes linhas dentro de `<VirtualHost>`:
+E também vamos alterar o caminho do DocumentRoot para o nosso site como na imagem abaixo: 
 
-```
-SSLEngine on
-SSLCertificateFile <CAMINHO DA CHAVE PÚBLICA .crt>
-SSLCertificateKeyFile <CAMINHO DA CHAVE PRIVADA .key>
-```
+![image](https://user-images.githubusercontent.com/104470835/235505344-222c00a4-4ece-4e37-aef0-8491365520f3.png)
 
-Veja como ficou o meu:
-
-![image](https://user-images.githubusercontent.com/104470835/235475323-dbb54171-6300-4b65-8934-f182dde70722.png)
-
-Salve o arquivo e reinicie o apache com `/etc/init.d/apache2 restart`
+Salve o arquivo, habilite a configuração com `a2ensite default-ssl.conf` e reinicie o apache com `/etc/init.d/apache2 restart`. Lembrando que essa é uma das diversas formas de configurar o SSL para nossa página, poderíamos configurar no próprio arquivo do nosso site ou poderíamos habilitar o SSL para todos os sites de uma vez, mas optei pela opção mais simples por fins demonstrativos.
 
 ***CUIDADO AO ADICIONAR OS CAMINHOS E NÃO COMPARTILHE SUA CHAVE PRIVADA(.key)***
 
 ## Teste do Servidor
+
+Para o teste, vou abrir o site no navegador usando o protocolo `https` e em seguida irei ver o certificado que geramos, observe o gif abaixo:
+
 
 
 
