@@ -1,6 +1,6 @@
 # GERENCIAMENTO DE SISTEMA
 
-<div align = "center" >
+<div align="center" >
 
 ![servidor-gerenciado-800x450](https://user-images.githubusercontent.com/104470835/235524202-28f50cbf-6d7b-4019-9002-d34f0a67c382.jpg)
 
@@ -11,8 +11,11 @@ Chegamos ao "ápice" do nosso projeto, isto é, iremos implementar um serviço q
 
 Sabemos que gerenciar um servidor com um ou mais serviços não é uma tarefa fácil, pensando nisso desenvolveram-se muitas ferramentas que ajudam nessa gestão. E nessa parte do projeto instalaremos uma ferramenta muito útil chamada Webmin.
 
+<div align="center" >
+
 ![Webmin_Logo](https://user-images.githubusercontent.com/104470835/235525732-19c79c3f-30a4-4913-9949-5f25a17e8299.png)
 
+</div>
 
 O Webmin é uma ferramenta de gerenciamento de sistema baseada na web, que permite que os usuários administrem vários aspectos de um servidor através de uma interface gráfica de usuário. Ele é executado em um servidor web e fornece uma interface fácil de usar para tarefas administrativas de rotina, como gerenciamento de arquivos, configuração de redes, gerenciamento de usuários e permissões, gerenciamento de serviços de sistema etc. O Webmin é gratuito e de código aberto, se você quiser saber mais acesse a [página oficial](https://webmin.com/).
 
