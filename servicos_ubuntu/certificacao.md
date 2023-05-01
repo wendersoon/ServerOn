@@ -32,7 +32,7 @@ Não vamos trabalhar com esse diretório.
 
 2. O segundo passo é habilitar o módulo SSL no Apache2 e para isso use o comando `sudo a2enmod ssl`. Em seguida, reinicie o serviço com `sudo /etc/init.d/apache2 restart`.
 
-3. Vamos criar um novo diretório para guardar o certificado privado que vamos gerar. Para criar o diretório, utilize o comando `sudo mkdir /etc/apache2/ssl`. E para gerar o certificado utilize o comando `sudo openssl req -x509 -nodes -days 365 -newkeyrsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt`. Vamos ver o que significa esse comando:
+3. Vamos criar um novo diretório para guardar o certificado privado que vamos gerar. Para criar o diretório, utilize o comando `sudo mkdir /etc/apache2/ssl`. E para gerar o certificado utilize o comando `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt`. Vamos ver o que significa esse comando:
 
 * `openssl`: é o comando do bash utilizado para acessar as funcionalidades do OpenSSL;
 
