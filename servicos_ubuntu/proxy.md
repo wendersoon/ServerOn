@@ -69,7 +69,7 @@ cache_swap_low 70
 cache_swap_high 95
 access_log daemon:/var/log/squid/access.log squid
 cache_log /var/log/squid/cache.log
-acl localnet src 192.168.0.0
+acl localnet src 192.168.0.0/24
 acl Safe_ports port 80 # http
 acl Safe_ports port 21 # ftp
 acl Safe_ports port 443 # https
@@ -98,7 +98,7 @@ Vamos ao significado de cada uma das diretivas pra você saber o que estamos con
 
 Agora que você sabe os significados das diretivas, sinta-se a vontade pra acessar a [documentação oficial](http://www.squid-cache.org/Doc/config/). Veja como está meu arquivo `squid.conf`:
 
-![image](https://user-images.githubusercontent.com/104470835/232612749-cbf4a01f-d259-4e50-abb9-cd442f743c64.png)
+![image](https://user-images.githubusercontent.com/104470835/235510919-8a7d17f0-0ac3-437e-8e3a-12bf63c2fd45.png)
 
 Depois de feito isso e antes de reiniciar o serviço, devemos criar o diretório de cache definido em `cache_dir`. Para isso utilize o comando `sudo mkdir -p /var/spool/squid` e altere as permissões (você já pode está verificando com ls -l dentro do diretório se já está `proxy:proxy`) desse diretório para o proxy com o comando `chown proxy:proxy /var/spool/squid`. Em seguida crie dentro `/etc/squid/` o arquivo *sitesproibidos* com o comando `touch sitesproibidos` e se quiser já adicionar alguma palavra para testar depois fique a vontade, no meu caso adicionei a palavra "quadrado".
 
