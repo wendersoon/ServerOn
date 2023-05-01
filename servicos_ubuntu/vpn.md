@@ -206,6 +206,10 @@ Agora, como segundo teste, vou dá ping da máquina cliente para o servidor com 
 
 Perceba que os pacotes de PING estão com o protocolo ESP (*Encapsulating Security Payload*) que é um dos protocolos usados no IPsec para fornecer serviços de segurança de rede, ele protege os dados transmitidos entre as extremidades da conexão VPN, encapsulando-os em um pacote criptografado.
 
+Utilizando o comando `sudo tcpdump esp` iremos capturar no terminal todos os pacotes que possuem o protocolo ESP:
+
+![Screencast from 01-05-2023 09_12_47](https://user-images.githubusercontent.com/104470835/235450133-ebd00200-ae5c-48b2-987d-a7587fddcb9b.gif)
+
 E por fim, como teste final, vou acessar o meu site `www.meusite753.com` e capturar os pacotes com wireshark:
 
 ![Screencast from 30-04-2023 20_19_01](https://user-images.githubusercontent.com/104470835/235380586-18bfc0e5-b3e0-4a22-a936-8d845d085b55.gif)
