@@ -82,7 +82,13 @@ Salve o arquivo, habilite a configuração com `a2ensite default-ssl.conf` e rei
 
 Para o teste, vou abrir o site no navegador usando o protocolo `https` e em seguida irei ver o certificado que geramos, observe o gif abaixo:
 
+![Screencast from 01-05-2023 15_33_31](https://user-images.githubusercontent.com/104470835/235507704-dc083dce-d75a-4e3e-b4dc-f437df11843c.gif)
 
+*OBS: O site está diferente porque mudei, devido a imagem de fundo não está mais disponível*
+
+Perceba que os dados que informamos no passo 3 da configuração estão ali, agora temos um certificado no nosso site. Lembre-se que para ser um certificado válido para o público em geral, deve-se procurar uma autoridade certificadora (CA) para que ela possa autentificar como legal.
+
+Muito obrigado se você leu até aqui, até o próximo!
 
 
 
