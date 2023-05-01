@@ -20,12 +20,15 @@ O Webmin é uma ferramenta de gerenciamento de sistema baseada na web, que permi
 
 Para instalação iremos seguir o [tutorial disponível](https://webmin.com/download/) no site o qual irei replicar aqui para facilitar o trabalho.
 
-Copie o seguinte script que irá realizar todas as instalações e atualizações necessárias para o Webmin:
+1. Copie o script disponível no github do Webmin que irá realizar todas as instalações e atualizações necessárias, o link é:
 
 ```
-curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh sh setup-repos.sh
+https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
 ```
 
+2. Crie um arquivo chamado `setup-repos.sh` e cole tudo o que apareceu na página do link.
+
+3. Por fim digite o comando `sh setup-repos.sh` para instalar o Webmin.
 
 
 
