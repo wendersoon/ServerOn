@@ -1,5 +1,3 @@
-## Certificação SSL
-
 <div align = "center">
 
 ![selossl](https://user-images.githubusercontent.com/104470835/235451273-7f503c14-db97-49ea-a806-b975355833fa.png)
