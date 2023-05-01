@@ -62,4 +62,10 @@ Após você digitar o comando, será solicitado algumas informações para o cer
 
 ![Screencast from 01-05-2023 10_39_55](https://user-images.githubusercontent.com/104470835/235459996-6bea397f-4cf7-425d-878b-32f12e44aee8.gif)
 
-4. E como último passo, vamos adicionar o caminho das chaves geradas no arquivo de configuração do módulo SSL/TLS do Apache2 chamado de `default-ssl.conf`, esse arquivo fica no diretório `/etc/apache2/sites-available/` 
+4. E como último passo, vamos adicionar o caminho das chaves geradas no arquivo de configuração do módulo SSL/TLS do Apache2 chamado de `default-ssl.conf`, esse arquivo fica no diretório `/etc/apache2/sites-available/`. Se você têm dúvidas como abrir o arquivo use o comando `sudo nano /etc/apache2/sites-available/default-ssl.conf`. Após abrir, encontre essas diretivas:
+
+![image](https://user-images.githubusercontent.com/104470835/235463932-1d6d09e9-5d83-451d-bede-f217b555eaa0.png)
+
+E altere para os caminhos para as chaves que criamos no passo 3, veja o resultado:
+
+
