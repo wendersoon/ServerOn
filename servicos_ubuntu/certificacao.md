@@ -16,3 +16,17 @@ Já uma **certificação privada** (ou certificado de servidor autoassinado) é 
 
 E nessa parte do projeto iremos gerar um certificado privado utilizando o OpenSSL que é um utilitário de criptografia de código aberto que fornece implementações de protocolos de segurança, como SSL/TLS (Secure Socket Layer/Transport Layer Security), PKI (Public Key Infrastructure), criptografia de chave simétrica e assimétrica, hash e outros algoritmos de criptografia. Se você quiser saber mais sobre esse projeto, acesse a [página oficial](https://www.openssl.org/).
 
+***Todos os comandos serão em modo root***
+
+## Instalação
+
+Para instalar você deve usar o comando `sudo apt-get install openssl`. A instalação não cria nenhum diretório específico mas pode criar alguns arquivos de configuração em diretórios existentes como, por exemplo, `etc/ssl/` que é onde geralmente são armazenados os arquivos de certificado e chave. Então, por isso, vamos dá uma olhada nesse diretório:
+
+![image](https://user-images.githubusercontent.com/104470835/235455061-a707a3d9-1393-485b-8297-39e1970f6a43.png)
+
+Vejamos um resumo:
+
+* `certs`: é o diretório que é geralmente usado para armazenar os arquivos de certificado, que são usados para autenticar a identidade de um servidor ou cliente em uma conexão SSL/TLS;
+* `openssl.cnf`: é o arquivo de configuração padrão do OpenSSL, que é usado para definir as opções de configuração do utilitário OpenSSL.;
+* `private`: é geralmente usado para armazenar os arquivos de chave privada, que são usados para criptografar e descriptografar os dados transmitidos em uma conexão SSL/TLS.
+
