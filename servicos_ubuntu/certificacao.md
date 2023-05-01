@@ -68,4 +68,12 @@ Após você digitar o comando, será solicitado algumas informações para o cer
 
 E altere para os caminhos para as chaves que criamos no passo 3, veja o resultado:
 
+![image](https://user-images.githubusercontent.com/104470835/235473308-c5c69c69-a3ab-4395-bb44-3bbbd460b7f7.png)
+
+***CUIDADO AO ADICIONAR OS CAMINHOS E NÃO COMPARTILHE SUA CHAVE PRIVADA(.key)***
+
+## Teste do Servidor
+
+
+
 
