@@ -106,7 +106,7 @@ O mesmo você pode fazer para o log de erros, o comando segue o mesmo padrão `s
 
 ## Certificação SSL
 
-
+SSL (*Secure Sockets Layer*) é um protocolo de segurança que permite a criptografia de comunicações de rede entre um cliente e um servidor. Uma certificação SSL, por sua vez, é um certificado digital que é emitido por uma autoridade de certificação (CA) confiável e serve para verificar a identidade do proprietário do site e garantir que as informações transmitidas estejam seguras.
 
 
 
