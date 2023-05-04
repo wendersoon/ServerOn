@@ -5,7 +5,7 @@
 </div>
 
 
-E nesta etapa do projeto, iremos instalar e configurar nosso próprio **serviço ipsec** e para isso instalaremos o ***strongswan***. Ele é um software de código aberto que implementa o protocolo **IPSec** para fornecer **segurança em comunicações de rede**, permite criar uma rede privada virtual (VPN) segura e criptografada entre dois ou mais dispositivos, é muito implementado em sistemas Linux além de suportar outros sistemas operacionais como o Windows e Android. Se você se interessou e quer saber mais sobre o ***strongswan*** pode está acessando a (página oficial)(https://www.strongswan.org/). 
+E nesta etapa do projeto, iremos instalar e configurar nosso próprio **serviço ipsec** e para isso instalaremos o ***strongswan***. Ele é um software de código aberto que implementa o protocolo **IPSec** para fornecer **segurança em comunicações de rede**, permite criar uma rede privada virtual (VPN) segura e criptografada entre dois ou mais dispositivos, é muito implementado em sistemas Linux além de suportar outros sistemas operacionais como o Windows e Android. Se você se interessou e quer saber mais sobre o ***strongswan*** pode está acessando a [página oficial](https://www.strongswan.org/). 
 
 
 <div align = "center">
