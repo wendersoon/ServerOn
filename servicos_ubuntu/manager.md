@@ -9,7 +9,9 @@
 
 Chegamos ao "ápice" do nosso projeto, isto é, iremos implementar um serviço que organiza todos os demais serviçoes que implementamos anteriormente em um só lugar. De todos os tutoriais, esse será o mais curto mas não menos importante. 
 
-Sabemos que gerenciar um servidor com um ou mais serviços não é uma tarefa fácil, pensando nisso desenvolveram-se muitas ferramentas que ajudam nessa gestão. E nessa parte do projeto instalaremos uma ferramenta muito útil chamada Webmin.
+Sabemos que gerenciar um servidor com um ou mais serviços não é uma tarefa fácil, pensando nisso desenvolveram-se muitas ferramentas que ajudam nessa gestão. E nessa parte do projeto instalaremos duas ferramentas que podem ser muito úteis, são elas: Webmin e/ou Monitorix.
+
+## Webmin
 
 <div align="center" >
 
@@ -19,7 +21,7 @@ Sabemos que gerenciar um servidor com um ou mais serviços não é uma tarefa f�
 
 O Webmin é uma ferramenta de gerenciamento de sistema baseada na web, que permite que os usuários administrem vários aspectos de um servidor através de uma interface gráfica de usuário. Ele é executado em um servidor web e fornece uma interface fácil de usar para tarefas administrativas de rotina, como gerenciamento de arquivos, configuração de redes, gerenciamento de usuários e permissões, gerenciamento de serviços de sistema etc. O Webmin é gratuito e de código aberto, se você quiser saber mais acesse a [página oficial](https://webmin.com/).
 
-## Instalação
+### Instalação
 
 Para instalação iremos seguir o [tutorial disponível](https://webmin.com/download/) no site o qual irei replicar aqui para facilitar o trabalho.
 
@@ -35,7 +37,7 @@ https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
 
 4. E por fim, digite `sudo apt-get install webmin`
 
-## Teste do Serviço
+### Teste do Serviço
 
 Após a conclusão da instalação, podemos acessar a ferramenta no navegador atráves da seguinte sintaxe `https://<IP_do_servidor>:10000`. No meu caso fica assim `https://192.168.0.101:10000`. Veja a primeira tela do serviço:
 
@@ -63,7 +65,21 @@ As credenciais de acesso são as mesmas do usário root do sistema. Agora daqui 
 
 ![image](https://user-images.githubusercontent.com/104470835/235535697-61934285-c252-4556-9f50-69a6c51b4b74.png)
 
-Acho que deu de perceber como é útil essa ferramenta. Você pode estar esplorando-a, as vezes não haverá uma funcionalidade que você busca, pra isso a ferramenta disponibiliza uma aba para instalar módulos que podem ajudar.
+## Monitorix
+
+<div align="center" >
+
+![monitorixlogo-removebg-preview](https://user-images.githubusercontent.com/104470835/236288565-3c3d43fa-aefe-4b1d-9aae-d25d87b42fd4.png)
+
+</div>
+
+O Monitorix é um software livre de monitoramento de sistema que exibe informações em tempo real sobre o desempenho do sistema e dos componentes, como CPU, memória, disco, rede e temperatura. Ele pode ser usado em sistemas baseados em Linux e BSD. Ele apresenta uma interface bem "retrô" e é bem fácil de utilizar. Ele coleta dados do **sistema em intervalos regulares** e exibe essas informações em gráficos e tabelas, também possui recursos avançados, como alertas de limite e notificações por e-mail. Se você deseja saber mais acesse a [página oficial](https://www.monitorix.org/).
+
+### Instalação e Teste
+
+Para instalação utilize o comando `sudo apt install monitorix`. Terminado a instalação, já está pronto para uso basta que você acesse no navegador o seguinte link `http://localhost:8080/monitorix`, lembrando que no lugar de `localhost` você deve susbtituir pelo IP do servidor. Irei mostrar algumas telas do software logo abaixo:
+
+* Tela inicial
 
 Terminamos por aqui essa parte do projeto. Obrigado pela leitura!
 
