@@ -14,14 +14,20 @@ As VPNs são amplamente utilizadas em empresas e organizações que precisam gar
 
 
 <div align = "center">
-  
-![download](https://user-images.githubusercontent.com/104470835/233728511-c468bfb2-3772-4d19-a1b9-b82585b17224.png)
 
+![ipsec-logo (1)](https://user-images.githubusercontent.com/104470835/236310104-017f32b3-c011-401b-9887-1ed6fa40abc1.png)
+ 
 </div>
 
 
 E nesta etapa do projeto, iremos instalar e configurar nosso próprio **serviço ipsec** e para isso instalaremos o ***strongswan***. Ele é um software de código aberto que implementa o protocolo **IPSec** para fornecer **segurança em comunicações de rede**, permite criar uma rede privada virtual (VPN) segura e criptografada entre dois ou mais dispositivos, é muito implementado em sistemas Linux além de suportar outros sistemas operacionais como o Windows e Android. Se você se interessou e quer saber mais sobre o ***strongswan*** pode está acessando a (página oficial)(https://www.strongswan.org/). 
 
+
+<div align = "center">
+  
+![download](https://user-images.githubusercontent.com/104470835/233728511-c468bfb2-3772-4d19-a1b9-b82585b17224.png)
+
+</div>
 Antes de prosseguirmos a instalação e configuração, é importante entendermos o que é o IPSec (**Internet Protocol Security**), que nada mais é que um conjunto de protocolos e técnicas utilizadas para proteger a comunicação através da internet. Ele fornece segurança no **nível do protocolo de internet (IP)** para garantir que os dados sejam transmitidos de forma segura e protegida contra interceptação, alteração ou falsificação por terceiros. Nesse [artigo da UFRJ](https://www.gta.ufrj.br/ensino/eel878/redes1-2016-1/16_1_2/vpn/vpn_ipsec2/vpn_ipsec/ipsec.html) você pode está se aprofundado no tema e sugiro que faça isso, pois é assunto muito interessante.
 
 Lembrando, novamente, que ***Todos os comandos serão em modo root!***
