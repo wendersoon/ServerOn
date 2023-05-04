@@ -81,7 +81,12 @@ Para instalação utilize o comando `sudo apt install monitorix`. Terminado a in
 
 * Tela inicial
 
-![Screencast from 04-05-2023 15_15_04](https://user-images.githubusercontent.com/104470835/236293254-a92305cd-8d26-4406-8491-7186d0a58d8f.gif)
+![image](https://user-images.githubusercontent.com/104470835/236296643-1c7fe7a2-2d5f-41e1-86ce-a8c28279209d.png)
+
+Perceba que temos algumas opções de períodos e gráficos de itens específicos do servidor.
+
+* Tipos de gráficos:
+
 
 
 
