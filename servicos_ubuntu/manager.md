@@ -81,6 +81,10 @@ Para instalação utilize o comando `sudo apt install monitorix`. Terminado a in
 
 * Tela inicial
 
+![Screencast from 04-05-2023 15_15_04](https://user-images.githubusercontent.com/104470835/236293254-a92305cd-8d26-4406-8491-7186d0a58d8f.gif)
+
+
+
 Terminamos por aqui essa parte do projeto. Obrigado pela leitura!
 
 <div align = "center"> 
