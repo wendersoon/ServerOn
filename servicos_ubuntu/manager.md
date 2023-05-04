@@ -87,7 +87,7 @@ Perceba que temos algumas opções de períodos e gráficos de itens específico
 
 * Tipos de gráficos:
 
-
+![Screencast from 04-05-2023 15_37_37](https://user-images.githubusercontent.com/104470835/236298118-c17c0c5a-bfe6-41cf-97a6-0e391c031d0f.gif)
 
 
 Terminamos por aqui essa parte do projeto. Obrigado pela leitura!
