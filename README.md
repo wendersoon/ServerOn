@@ -31,6 +31,8 @@ Todas as etapas desse projeto estão listados abaixo:
 * [SERVIÇO DE COMPARTILHAMENTO DE ARQUIVOS: Proftpd + SAMBA](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/ServerArquivo.md)
 * [SERVIÇO DHCP: ISC DHCP server](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/dhcp.md)
 * [SERVIÇO PROXY: Squid](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/proxy.md)
-* [SERVIÇO VPN: StrongSwan](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/vpn.md)
-* [SERVIÇO DE GERENCIAMENTO DE SISTEMA: Webmin](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/manager.md)
+* [SERVIÇO IPSEC: StrongSwan](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/vpn.md)
+* [SERVIÇO VPN: Openvpn]()
+* [SERVIÇO DE GERENCIAMENTO DE SISTEMA: Webmin + Monitorix](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/manager.md)
+
 
