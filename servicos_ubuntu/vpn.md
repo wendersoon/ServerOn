@@ -1,4 +1,3 @@
-# SERVIDOR VPN
 
 <div align = "center">
 
@@ -11,3 +10,30 @@ Uma VPN (**Virtual Private Network**) é uma rede privada virtual que permite qu
 Ao se conectar a uma VPN, o tráfego de internet do usuário é redirecionado por um servidor VPN, que funciona como um intermediário entre o dispositivo do usuário e a internet, tornando o endereço **IP do usuário anônimo**. Isso permite que o usuário acesse a internet de forma segura, sem o risco de ser rastreado ou monitorado por terceiros, além de acessar conteúdos restritos geograficamente, como serviços de streaming, que podem ser bloqueados em sua localização. 
 
 As VPNs são amplamente utilizadas em empresas e organizações que precisam garantir a segurança das informações transmitidas pela internet, bem como por usuários individuais que desejam proteger sua privacidade online e acessar conteúdos restritos.
+
+<div align = "center">
+
+![image](https://user-images.githubusercontent.com/104470835/236550673-de119d00-d184-433a-80cd-9e8dfabff01c.png)
+
+</div>
+
+E nesta etapa do projeto iremos instalar e configurar nossa rede privada virtual (VPN) utilizando o OpenVPN  que é um software de código aberto, que permite a criação de túneis seguros e criptografados entre dois pontos na Internet, permitindo que o tráfego de rede seja protegido de olhares indiscretos. Ele usa protocolos de criptografia para proteger a conexão, tornando-a segura e confiável para a transmissão de dados sensíveis e também está disponível em vários sistemas operacionais e é compatível com vários dispositivos de rede, como roteadores, firewalls e servidores. Se você quiser saber pode está acessando o [github do projeto](https://github.com/Nyr/openvpn-install).
+
+** Todos os comandos serão feito em modo root!**
+
+
+## Um Pouco Antes da Configuração
+
+Vou capturar os pacotes do meu tráfego de internet do meu pc real é ver estão os protocolos, veja abaixo:
+
+![Screencast from 05-05-2023 16_29_32](https://user-images.githubusercontent.com/104470835/236552702-6b5d3611-acd2-43cc-a699-d3ebaa6ffe4f.gif)
+
+Após a instalação e configuração do serviço VPN, esses pacotes estarão criptografados.
+
+## Instalação
+
+Para instalar é bem simples, basta seguir o que está disponível no github e que reproduzo aqui para a facilitar. O comando é `wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`.
+
+
+
+
