@@ -40,7 +40,13 @@ Depois disso você pode abrir o arquivo gerado no mesmo diretório e colocar as 
 
 ## Teste do Servidor
 
+Após a instalação, veja abaixo os pacotes capturados com wireshark:
 
+![Screencast from 05-05-2023 19_03_00](https://user-images.githubusercontent.com/104470835/236576391-6b825476-e21c-4448-9081-e81022a0c4ed.gif)
 
+Perceba que agora os pacotes estão encapsulados com o protocolo OPENVPN, isto é, estão criptografados.
 
+---
+
+Terminamos por aqui essa parte do projeto, obrigado!
 
