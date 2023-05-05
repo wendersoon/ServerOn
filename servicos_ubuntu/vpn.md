@@ -36,5 +36,7 @@ Para instalar é bem simples, basta seguir o que está disponível no github e q
 
 ![image](https://user-images.githubusercontent.com/104470835/236560430-f0fe8672-1394-49cf-809a-8af6619a1f89.png)
 
+Depois disso pegue o arquivo gerado e 
+
 
 
