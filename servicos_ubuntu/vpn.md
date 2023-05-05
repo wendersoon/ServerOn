@@ -36,7 +36,11 @@ Para instalar é bem simples, basta seguir o que está disponível no github e q
 
 ![image](https://user-images.githubusercontent.com/104470835/236560430-f0fe8672-1394-49cf-809a-8af6619a1f89.png)
 
-Depois disso pegue o arquivo gerado e 
+Depois disso você pode abrir o arquivo gerado no mesmo diretório e colocar as configurações nas informações de VPN da sua máquina. No meu caso, como uso ubuntu, basta que eu pegue esse arquivo e importe ele para as configurações. Se você estiver com dúvidas no Windows veja esse [tutorial](https://marcoandrade.com.br/como-configurar-uma-conexao-vpn-no-windows/).
+
+## Teste do Servidor
+
+
 
 
 
