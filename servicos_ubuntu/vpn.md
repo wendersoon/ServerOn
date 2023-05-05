@@ -32,8 +32,9 @@ Após a instalação e configuração do serviço VPN, esses pacotes estarão cr
 
 ## Instalação
 
-Para instalar é bem simples, basta seguir o que está disponível no github e que reproduzo aqui para a facilitar. O comando é `wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`.
+Para instalar é bem simples, basta seguir o que está disponível no github e que reproduzo aqui para a facilitar. O comando é `wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`. Depois disso serão solicitados algumas informações que são bem intuitivas, veja abaixo um print das entradas pedidas:
 
+![image](https://user-images.githubusercontent.com/104470835/236560430-f0fe8672-1394-49cf-809a-8af6619a1f89.png)
 
 
 
