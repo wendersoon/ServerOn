@@ -32,7 +32,7 @@ Todas as etapas desse projeto estão listados abaixo:
 * [SERVIÇO DHCP: ISC DHCP server](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/dhcp.md)
 * [SERVIÇO PROXY: Squid](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/proxy.md)
 * [SERVIÇO VPN C/ IPSEC: StrongSwan](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/ipsec.md)
-* [SERVIÇO VPN: Openvpn]()
+* [SERVIÇO VPN: Openvpn](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/vpn.md)
 * [SERVIÇO DE GERENCIAMENTO DE SISTEMA: Webmin + Monitorix](https://github.com/wendersoon/ServerOn/blob/main/servicos_ubuntu/manager.md)
 
 
