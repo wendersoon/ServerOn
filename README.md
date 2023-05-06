@@ -19,7 +19,7 @@ Placa de rede: Gigabit<br>
 
 
 # Index
-Todas as etapas desse projeto estão listados abaixo:
+Todas as etapas desse projeto estão listados abaixo, você pode também acessá-las atráves da guia WIKI acima:
 
 ### Ubuntu Server
 
